@@ -1,0 +1,105 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+{% block body %}
+<head>
+  <title>NRCC Blogs</title>
+</head> 
+<body>
+  <main id="main">
+    <section>
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-9" data-aos="fade-up">
+            <h3 class="category-title">Category: 
+              <span class="aside-tags list-unstyled">
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Culture</a></li>
+                <li><a href="#">Sport</a></li>
+                <li><a href="#">Food</a></li>
+                <li><a href="#">Politics</a></li>
+                <li><a href="#">Celebrity</a></li>
+                <li><a href="#">Startups</a></li>
+                <li><a href="#">Travel</a></li>
+              </span>
+            </h3>
+
+            {% for blog in blogs %}
+
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'blog:single_blog' blog.title|slugify %}" class="me-4 thumbnail">
+                <img src="{{ blog.featured_image.url }}" alt="" class="img-fluid">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>{{ blog.published_date }}</span></div>
+                <h3><a href="{% url 'blog:single_blog' blog.title|slugify %}">{{ blog.title }}</a></h3>
+                <p>{{ blog.body|truncatewords:50 }}</p>
+                <div class="d-flex align-items-center author">
+                  <div class="photo"><img src="{% static 'blog/img/authors/person-2.jpg' %}" alt="" class="img-fluid"></div>
+                  <div class="name">
+                    <h3 class="m-0 p-0">{{ blog.author }}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {% endfor %}
+
+            <div class="text-start py-4">
+              <div class="custom-pagination">
+                {% if blogs.has_previous %}
+                <a href="?page={{ blogs.previous_page_number }}" class="prev">Previous</a>
+                {% endif %}
+
+                {% for i in blogs.paginator.page_range %}
+                  {% if i == blogs.number  %}
+                    <a href="?page={{ i }}" class="active">{{ i }}</a>
+                  {% else %}
+                    <a href="?page={{ i }}">{{ i }}</a>
+                  {% endif %}
+                {% endfor %}
+
+                {% if blogs.has_next %}
+                <a href="?page={{ blogs.next_page_number }}" class="next">Next</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <!-- ======= Sidebar ======= -->
+            <div class="aside-block">
+
+              <ul class="nav nav-pills custom-tab-nav mb-4" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-trending-tab" data-bs-toggle="pill" data-bs-target="#pills-trending" type="button" role="tab" aria-controls="pills-trending" aria-selected="true">Trending</button>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="pills-tabContent">
+
+                <!-- Trending -->
+                <div class="tab-pane fade show active" id="pills-trending" role="tabpanel" aria-labelledby="pills-trending-tab">
+                  {% for trending_blog in trending_blogs %}
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Sport</span> <span class="mx-1">&bullet;</span> <span>{{ trending_blog.blogs.published_date }}</span></div>
+                    <h2 class="mb-2"><a href="{% url 'blog:single_blog' trending_blog.blogs.title|slugify %}">{{ trending_blog.blogs.title }}</a></h2>
+                    <span class="author mb-3 d-block">{{ trending_blog.blogs.author }}</span>
+                  </div>
+                  </div>
+                  {% endfor %}
+                </div> <!-- End Trending -->
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+
+</body>
+{% endblock %}

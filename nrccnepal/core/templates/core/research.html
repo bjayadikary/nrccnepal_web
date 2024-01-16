@@ -1,0 +1,963 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Research Training{% endblock title %}
+{% block css %}
+<style>
+    .article {
+        position: relative;
+        /* max-width: 1200px; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 40px;
+        z-index: 1;
+    }
+
+    .article p {
+        font-size: 14pt;
+        line-height: 22pt;
+        color: black;
+        border-left: 3px solid blue;
+        padding: 30px 40px;
+        background: #eee;
+        font-weight: 300;
+        word-spacing: 5px;
+        border-radius: 0 20px 0 0;
+    }
+
+    .article p:first-letter {
+        font-size: 200%;
+        font-weight: 600;
+        margin-right: 1px;
+        color: #004AAD;
+    }
+    
+</style>
+
+{% endblock css %}
+
+{% block content %}
+
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div class="hero-container">
+        <!-- <div class="row">
+            <div class="col-md-6">
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus minus
+                    doloremque id nihil nobis tempora dolore accusantium non consequatur exercitationem dolorem atque
+                    esse velit earum explicabo sed rem error laboriosam, nulla voluptatem quam cupiditate architecto?
+                    Cumque voluptatibus quae voluptas sapiente possimus impedit, inventore sed sit dolore odio ratione
+                    perspiciatis autem nostrum at vitae natus ipsam consequatur? Reiciendis, odio. Sint, accusantium!
+                </p>
+            </div>
+            <div class="col-md-6">
+                <img src="mk" alt="mk">
+            </div>
+        </div> -->
+
+
+
+        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+
+
+                <div class="carousel-item active" style="background-image: url({% static 'core/img/just_a_bg.jpg' %});">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <div class="badge bg-gradient-primary-to-secondary mb-4">
+                                <div class="text-uppercase">Research &#124; <span style="color:orange"> Collaboration </span> &#124; innovation</div>
+                            </div>
+                            <h5 class="animate__animated animate__fadeInDown text-white">Nepal Research and Collaboration Center
+                            </h5>
+                            <h2 class="display-3 fw-bolder"><span class="text-white d-inline">Research Training
+                                    <span style="color:orange;">2023</span></span></h2>
+
+                            <div class="animate__animated animate__fadeInUp mt-0">
+
+                                <p style="margin-block:0"><i class="bi bi-calendar-check"
+                                        style="color: orange;"></i>&nbsp;&nbsp; July 08 - September 17, 2023</p>
+                                <p style="margin-block:0"><i class="bi bi-calendar-week" style="color: orange;"></i>&nbsp;&nbsp;  Every Saturday & Sunday </p>
+                                <p style="margin-block:0"><i class="bi bi-clock" style="color: orange;"></i>&nbsp;&nbsp;  7:00 PM - 8:30 PM </p>
+                            </div>
+
+                           
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeyeBhwzBFMBNh25vWGUze8KW589RwJVrdiOotvtsIClOtcFQ/viewform" class="btn-get-started animate__animated animate__fadeInUp" target="_blank">Apply Now</a>
+                            <a href="#why-us" class="btn-get-started animate__animated animate__fadeInUp scrollto">Learn More</a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+</section><!-- End Hero -->
+
+<main id="main">
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+        <div class="container">
+
+
+            <div class="article" style="padding: 10px;">
+                <p style="text-align: justify;">
+                    <strong>Research Training:</strong> Our esteemed program offers students the unique prospect to
+                    cultivate indispensable skills
+                    encompassing experimental design, data collection, analysis, and interpretation. Armed with these
+                    invaluable proficiencies, participants can make substantial contributions to the scientific
+                    community by generating original knowledge and addressing pertinent local challenges in domains such
+                    as healthcare, agriculture, and environmental sustainability. However, the scarcity of resources,
+                    outdated curricula, and a scarcity of research-focused institutions often impede Nepalese students
+                    from accessing adequate research training opportunities.
+                </p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-4">
+                    <div class="box">
+                        <span style="color:orange;">1</span>
+                        <h4>When & Where?</h4>
+                        <p>Research Training will happen every Saturday and Sunday from July 8 to September 17, 2023 on
+                            Google Meet.
+                        <br></br>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="box">
+                        <span style="color:orange;">2</span>
+                        <h4>Who can Apply?</h4>
+                        <p>Open to all! Join our research training program to enhance your skills, connect with fellow researchers, and unleash your potential. Apply today and embark on a journey of discovery and growth.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="box">
+                        <span style="color:orange;">3</span>
+                        <h4> Important Deadlines</h4>
+                        <p>June 05 <strong>Application Open</strong></p>
+                        <p>July 04 <strong>Application Close</strong></p>
+                        <p>July 06 <strong>Final Announcement</strong></p>
+                        <p>July 08 <strong>Program Start</strong></p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Why Us Section -->
+
+
+
+
+    <!-- ======= Trainers Section ======= -->
+    <section id="team" class="team">
+        <div class="container">
+
+            <div class="section-title text-center">
+                <h2>Trainers</h2>
+                <p>Meet our expert trainers, who bring real-world experience and insights tailored to your specific goals. Their hands-on approach emphasizes practical application, allowing you to gain invaluable experience and refine your research techniques, also empowering you to make a meaningful impact through your research. With our experts who are accomplished researchers themselves, we provide unparalleled expertise in a wide range of disciplines.</p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.1s">
+                    <div class="member"> <div class="member-img">
+                        <img src="{% static 'core/img/team/db_kattel.png' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/d-b-kattel-phd-b309b836/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        </div> </div>
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>D.B. Kattel, PhD</h4>
+                                <span style="margin-bottom:0;">Research Scientist, Institute of Tibetan Plateau Research, CAS</span>
+                                <!--<span>Chinese Academy of Sciences</span>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
+                    <div class="member"> <div class="member-img">
+                        <img src="{% static 'core/img/team/pramod_paudel.png' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/pramod-poudel-0247297a/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        </div></div>
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Pramod Paudel, PhD</h4>
+                                <span>Research Director, University Grant Commission Nepal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+              <!--<div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">-->
+              <!--      <div class="member"> <div class="member-img">-->
+              <!--          <img src="{% static 'core/img/team/nilam_shrestha_pradhan.png' %}" class="img-fluid" alt="">-->
+              <!--          <div class="social">-->
+              <!--              <a href="https://www.facebook.com/nilam.shrestha.33" target="_blank"><i class="bi bi-facebook"></i></a>-->
+              <!--          </div> </div>-->
+              <!--          <div class="member-info">-->
+              <!--              <div class="member-info-content">-->
+              <!--                  <h4>Nilam Shrestha Pradhan, PhD</h4>-->
+              <!--                  <span>Chairman, Nepal Physical Society</span>-->
+              <!--              </div>-->
+              <!--          </div>-->
+              <!--      </div>-->
+              <!--  </div>-->
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="member"> <div class="member-img">
+                        <img src="{% static 'core/img/team/babita_paudel.png' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/babita-paudel-72b6159b/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        </div> </div>
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Babita Paudel, PhD</h4>
+                                <span>Research Director, Center for Natural and Applied Sciences</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
+                    <div class="member"> <div class="member-img">
+                        <img src="{% static 'core/img/team/roshan_shrestha.jpg' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/roshan-lal-shrestha-4765689" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        </div> </div>
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Roshan Lal Shrestha, PhD</h4>
+                                <span>Research Scientist, National Institutes of Health, USA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.1s">
+                    <div class="member"> <div class="member-img">
+                        <img src="{% static 'core/img/team/bikash_nakarmi.png' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.facebook.com/bikash.nakarmi.3" target="_blank"><i class="bi bi-facebook"></i></a>
+                        </div> </div>
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Bikash Nakarmi, PhD</h4>
+                                <span>Researcher, Nanjing University of Aeronautics and Astronautics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
+                    <div class="member"> <div class="member-img">
+                        <img src="{% static 'core/img/team/dhaka_ram_bhandari.png' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/dhaka-bhandari-9507b5bb/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        </div> </div>
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Dhaka Ram Bhandari, PhD</h4>
+                                <span>Executive Director, Gandaki Province Academy of Science and Technology</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
+                    <div class="member"> <div class="member-img">
+                        <img src="{% static 'core/img/team/sameer_dixit.png' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/sameermdixit" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        </div> </div>
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Sameer M Dixit, PhD</h4>
+                                <span style="margin-bottom: 0;">Chairperson, INPL</span>
+                                <span>Founder and Director of Research, CMDN</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
+                    <div class="member"> <div class="member-img">
+                        <img src="{% static 'core/img/team/kiran_paudel.png' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/kiran-paudel-b94510141/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        </div> </div>
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Kiran Paudel</h4>
+                                <span>Co-Founder, Nepal Health Frontiers</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
+                    <div class="member"> <div class="member-img">
+                        <img src="{% static 'core/img/team/kapil_adhikari.png' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.facebook.com/kapil.adhikari.56" target="_blank"><i class="bi bi-facebook"></i></a>
+                        </div> </div>
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Kapil Adhikari, PhD</h4>
+                                <span>Dean, Faculty of Science and Technology, Gandaki University</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
+                    <div class="member"> <div class="member-img">
+                        <img src="{% static 'core/img/team/sarbesh_das.jpg' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/sarbesh" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        </div> </div>
+                        <div class="member-info"> 
+                            <div class="member-info-content">
+                                <h4>Sarbesh Das Dangol, PhD</h4>
+                                <span>Visiting Faculty, Central Department of Biotechnology</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.1s">
+                    <div class="member"> <div class="member-img">
+                        <img src="{% static 'core/img/team/dibakar_sigdel.png' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/sigdeld/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        </div> </div>
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Dibakar Sigdel, PhD</h4>
+                                <span>Principal Data Scientist, Truveta, WA, USA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.1s">
+                    <div class="member"> <div class="member-img">
+                        <img src="{% static 'core/img/team/madhu_sudhan_paudel.jpg' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.facebook.com/profile.php?id=100084072558887" target="_blank"><i class="bi bi-facebook"></i></a>
+                        </div> </div>
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Madhu Sudan Paudel, MSc</h4>
+                                <span>Assistant Professor, Tri-Chandra Multiple Campus</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.1s">
+                    <div class="member"> <div class="member-img">
+                        <img src="{% static 'core/img/team/umesh_regmi1.png' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/regmiumesh/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        </div> </div>
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Umesh Regmi</h4>
+                                <span>Software Engineer, Instructor at Deerwalk Training Center</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
+                    <div class="member"> <div class="member-img">
+                        <img src="{% static 'core/img/team/utsav_shiwakoti.jpg' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/utsav-siwakoti-18a310175" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        </div> </div>
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Utsav Siwakoti, MSc</h4>
+                                <span>Kathmandu University</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.1s">
+                    <div class="member"> <div class="member-img">
+                        <img src="{% static 'core/img/team/kshitiz_regmi.png' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/kshitizregmi/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        </div> </div>
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Kshitiz Regmi</h4>
+                                <!--<span style="margin-bottom:0;">Certified TensorFlow Developer</span>-->
+                                <span>Machine Learning Engineer, Fusemachines</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- End of Trainers Section -->
+    
+<!-- ======= Mentors Section ======= -->
+    <section id="team" class="team">
+        <div class="container">
+
+            <div class="section-title text-center">
+                <h2>Mentors</h2>
+                <p>Meet our mentors, who offer their expertise and support to the participants. With their extensive knowledge and experiences they are ready to clear doubts, provide relevant resources and collaborate with participants on their weekly assignments.</p>
+            </div>
+
+            <div class="row">
+                
+              <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
+                    <div class="member"> <div class="member-img">
+                        <img src="{% static 'core/img/team/mentors_images/asbin_bahadur_chand.png' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.facebook.com/rhythem.chandasbin" target="_blank"><i class="bi bi-facebook"></i></a>
+                        </div></div>
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Asbin Bahadur Chand, Cancer Biologist</h4>
+                                <span>Central Department of Biotechnology</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+              <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
+                    <div class="member"> <div class="member-img">
+                        <img src="{% static 'core/img/team/mentors_images/basant_lekhak.png' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.facebook.com/blekhak1" target="_blank"><i class="bi bi-facebook"></i></a>
+                        </div></div>
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Basant Lekhak, MSc in Environmental Engineering</h4>
+                                <span>IOE, Pulchowk Campus</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+              <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
+                    <div class="member"> <div class="member-img">
+                        <img src="{% static 'core/img/team/mentors_images/biman_rimal.png' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.facebook.com/biman.rimal" target="_blank"><i class="bi bi-facebook"></i></a>
+                        </div></div>
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Biman Rimal, Assistant Professor</h4>
+                                <span>IOE, Thapathali Campus</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+              <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
+                    <div class="member"> <div class="member-img">
+                        <img src="{% static 'core/img/team/mentors_images/kabita_kandel.png' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.facebook.com/kavita.kandel.58" target="_blank"><i class="bi bi-facebook"></i></a>
+                        </div></div>
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Kabita Kandel, MSc in Biotechnology</h4>
+                                <span>Research Scientist, Fleur Himalayan Limited</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+              <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
+                    <div class="member"> <div class="member-img">
+                        <img src="{% static 'core/img/team/mentors_images/kiran_adhikari.png' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.facebook.com/kiran.adhikari.5243" target="_blank"><i class="bi bi-facebook"></i></a>
+                        </div></div>
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Kiran Adhikari, PhD Researcher</h4>
+                                <span>Technische Universität München</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+    </section>
+    <!-- End of Mentors Section -->
+    
+  <!-- Organizers Section  -->
+    <section>
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <div class="row justify-content-center section-title">
+                <h2 >Organizers</h2>
+                <p >Introducing our organizers, who are working perpetually to bring everything together. From carefully planning every detail to coordinating with trainers, mentors and managing logistics, they ensure a smooth and enriching experience for all participants. With their unwavering dedication and passion, our organization created a supportive environment where learning thrives and collaboration flourishes.</p>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 text-center mb-5">
+            <img src="{% static 'core/img/team/organizers_images/swastika_yogi.png' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+            <h4 style="font-weight: 420; font-size:20px;">Swastika Yogi</h4>
+            <span class="d-block text-uppercase" style="font-size:15px; color: #7083d2;">Program Director / Founding Treasurer</span>
+            <span class="d-block mb-3 text-uppercase" style="font-size:15px; color: #7083d2;">BSc Physics, BA Economics, TU</span>
+          </div>
+          
+          <div class="col-lg-4 text-center mb-5">
+            <img src="{% static 'core/img/team/organizers_images/bibek_lal_karn.png' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+            <h4 style="font-weight: 420; font-size:20px;">Bibek Lal Karn</h4>
+            <span class="d-block text-uppercase" style="font-size:15px; color: #7083d2;">Program Executive / Founding Chairman</span>
+            <span class="d-block mb-3 text-uppercase" style="font-size:15px; color: #7083d2;">BSc Physics, Tribhuvan University</span>
+          </div>
+          
+          <div class="col-lg-4 text-center mb-5">
+            <img src="{% static 'core/img/team/organizers_images/agrima_bogati.png' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+            <h4 style="font-weight: 420; font-size:20px;">Agrima Bogati</h4>
+            <span class="d-block text-uppercase" style="font-size:15px; color: #7083d2;">Program Executive / Secretary</span>
+            <span class="d-block mb-3 text-uppercase" style="font-size:15px; color: #7083d2;">BSc Biology, Tribhuvan University</span>
+          </div>
+          
+          <div class="col-lg-4 text-center mb-5">
+            <img src="{% static 'core/img/team/organizers_images/bijay_adhikari.png' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+            <h4 style="font-weight: 420; font-size:20px;">Bijay Adhikari</h4>
+            <span class="d-block text-uppercase" style="font-size:15px; color: #7083d2;">Program Executive / Member</span>
+            <span class="d-block mb-3 text-uppercase" style="font-size:15px; color: #7083d2;">BSc.CSIT, Tribhuvan University</span>
+          </div>
+          
+          <div class="col-lg-4 text-center mb-5">
+            <img src="{% static 'core/img/team/organizers_images/jhanak_shrestha.png' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+            <h4 style="font-weight: 420; font-size:20px;">Jhanak Shreshtha</h4>
+            <span class="d-block text-uppercase" style="font-size:15px; color: #7083d2;">Program Executive / Member</span>
+            <span class="d-block mb-3 text-uppercase" style="font-size:15px; color: #7083d2;">BSc Physics, Tribhuvan University</span>
+          </div>
+          
+          <div class="col-lg-4 text-center mb-5">
+            <img src="{% static 'core/img/team/organizers_images/devraj_maidali.png' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+            <h4 style="font-weight: 420; font-size:20px;">Devraj Maidali</h4>
+            <span class="d-block text-uppercase" style="font-size:15px; color: #7083d2;">Program Executive / Member</span>
+            <span class="d-block mb-3 text-uppercase" style="font-size:15px; color: #7083d2;">MSc Biotechnology, Tribhuvan University</span>
+          </div>
+          
+          <div class="col-lg-4 text-center mb-5">
+            <img src="{% static 'core/img/team/organizers_images/apekshya_gyawali.png' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+            <h4 style="font-weight: 420; font-size:20px;">Apekshya Gyawali</h4>
+            <span class="d-block text-uppercase" style="font-size:15px; color: #7083d2;">Program Executive / Member</span>
+            <span class="d-block mb-3 text-uppercase" style="font-size:15px; color: #7083d2;">BSc.CSIT, Tribhuvan University</span>
+          </div>
+          
+          <div class="col-lg-4 text-center mb-5">
+            <img src="{% static 'core/img/team/organizers_images/prinshu_dahal.png' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+            <h4 style="font-weight: 420; font-size:20px;">Prinshu Dahal</h4>
+            <span class="d-block text-uppercase" style="font-size:15px; color: #7083d2;">Program Executive / Member</span>
+            <span class="d-block mb-3 text-uppercase" style="font-size:15px; color: #7083d2;">Public Health, Purbanchal University</span>
+          </div>
+
+          <div class="col-lg-4 text-center mb-5">
+            <img src="{% static 'core/img/team/organizers_images/kiran_tiwari.png' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+            <h4 style="font-weight: 420; font-size:20px;">Kiran Tiwari</h4>
+            <span class="d-block text-uppercase" style="font-size:15px; color: #7083d2;">Program Executive / Member</span>
+            <span class="d-block mb-3 text-uppercase" style="font-size:15px; color: #7083d2;">Public Health, Pokhara University</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- End of Organizers Section -->
+    
+    <!-- Syllabus Section -->
+    <section id="services" class="services" style="padding-top:40px">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Syllabus</h2>
+        <p>The training program provides participants with proficiency in LaTeX and Python, enhancing their research capabilities, and fostering contributions to their respective fields through peer review, academic writing, and the publishing process. Each section will be assigned an assignment that must be completed by the end of the week.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6 icon-box">
+          <!-- <div class="icon"><i class="bi bi-briefcase"></i></div> -->
+          <h4 class="title">Month 1</h4>
+            <ul class="description" style="list-style-type: none; text-align: left;">
+              <li><i class="bi bi-check"></i> <span>Lecture 1: Intro Session</span></li>
+              <li><i class="bi bi-check"></i> <span>Lecture 2: LaTeX Workshop</span></li>
+              <li><i class="bi bi-check"></i> <span>Lecture 3: Introduction to Research</span></li>
+              <li><i class="bi bi-check"></i> <span>Lecture 4: Python Workshop 1</span></li>
+              <li><i class="bi bi-check"></i> <span>Lecture 5: LaTeX Editing Workshop</span></li>
+              <li><i class="bi bi-check"></i> <span>Lecture 6: Python Workshop 2</span></li>
+              <li><i class="bi bi-check"></i> <span>Lecture 7: Collaborative Writing Session</span></li>
+              <li><i class="bi bi-check"></i> <span>Lecture 8: Research Proposal Workshop</span></li>
+            </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6 icon-box">
+          <!-- <div class="icon"><i class="bi bi-briefcase"></i></div> -->
+          <h4 class="title">Month 2</h4>
+            <ul class="description" style="list-style-type: none; text-align: left;">
+              <li><i class="bi bi-check"></i> <span>Lecture 9: Python Workshop 3</span></li>
+              <li><i class="bi bi-check"></i> <span>Lecture 10: Review Paper Writing Session</span></li>
+              <li><i class="bi bi-check"></i> <span>Lecture 11: Python Workshop 4</span></li>
+              <li><i class="bi bi-check"></i> <span>Lecture 12: Academic Writing Workshop</span></li>
+              <li><i class="bi bi-check"></i> <span>Lecture 13: Python Workshop 5</span></li>
+              <li><i class="bi bi-check"></i> <span>Lecture 14: Publishing Process Workshop</span></li>
+              <li><i class="bi bi-check"></i> <span>Lecture 15: Python Workshop 6</span></li>
+              <li><i class="bi bi-check"></i> <span>Lecture 16: Research Paper Critique Session</span></li>
+            </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6 icon-box">
+          <!-- <div class="icon"><i class="bi bi-briefcase"></i></div> -->
+          <h4 class="title">Month 3</h4>
+            <ul class="description" style="list-style-type: none; text-align: left;">
+              <li><i class="bi bi-check"></i> <span>Lecture 17: Python Workshop 7</span></li>
+              <li><i class="bi bi-check"></i> <span>Lecture 18: Research Opportunities Session</span></li>
+              <li><i class="bi bi-check"></i> <span>Lecture 19: Python Workshop 8</span></li>
+              <li><i class="bi bi-check"></i> <span>Lecture 20: Networking Session 1</span></li>
+              <li><i class="bi bi-check"></i> <span>Lecture 21: Networking Session 2</span></li>
+              <li><i class="bi bi-check"></i> <span>Lecture 22: Closing Session</span></li>
+            </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+    <!--End of Syllabus Section -->
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq section-bg">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
+                    fugiat sit
+                    in iste officiis commodi quidem hic quas.</p> -->
+            </div>
+
+            <div class="faq-list">
+                <ul>
+                    <li data-aos="fade-up">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse"
+                            data-bs-target="#faq-list-1">What is Research Training? <i
+                                class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                            <p style="text-align: justify;">
+                                Research training assumes paramount importance in the realm of science as it forms the
+                                bedrock for academic and professional accomplishments. In the context of Nepal, where
+                                scientific research is gaining traction, the significance of research training becomes
+                                even
+                                more pronounced. Our esteemed program offers students the unique prospect to cultivate
+                                indispensable skills encompassing experimental design, data collection, analysis, and
+                                interpretation. Armed with these invaluable proficiencies, participants can make
+                                substantial
+                                contributions to the scientific community by generating original knowledge and
+                                addressing
+                                pertinent local challenges in domains such as healthcare, agriculture, and environmental
+                                sustainability. However, the scarcity of resources, outdated curricula, and a scarcity
+                                of
+                                research-focused institutions often impede Nepalese students from accessing adequate
+                                research training opportunities. This stark disparity not only hampers their personal
+                                growth
+                                but also poses a formidable hurdle to the overall scientific progress of the nation,
+                                impeding their capacity to engage in rigorous and impactful research and curtailing
+                                their
+                                potential contributions to the wider scientific community.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-up" data-aos-delay="100">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                            data-bs-target="#faq-list-2" class="collapsed">What are its objectives? <i
+                                class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                            <ol>
+                                <li class="py-0">
+                                    <strong>Unleash the Power of Data:</strong>
+                                    Master data visualization and advanced analysis
+                                    techniques for compelling insights.
+                                </li>
+                                <li class="py-0">
+                                    <strong> Amplify Your Research Impact:</strong>
+                                    Communicate effectively and publish strategically to elevate your research.
+                                </li>
+                                <li class="py-0">
+                                    <strong> Forge Meaningful Connections:</strong>
+                                    Join a vibrant research community for collaborations and opportunities.
+                                </li>
+                                <li class="py-0">
+                                    <strong> Ignite Your Research Journey: </strong> Build confidence and recognition as
+                                    a skilled
+                                    researcher.
+                                </li>
+                                <li class="py-0">
+                                    <strong>Embrace Inquiry: </strong> Explore diverse research strategies and drive
+                                    groundbreaking
+                                    discoveries
+
+                                </li>
+                                <li class="py-0">
+                                    <strong> Unlock Research Skills:</strong>
+                                    Acquire valued expertise in literature studies, data synthesis, and analysis.
+                                </li>
+                                <li class="py-0">
+                                    <strong>Experience Transformative Learning:</strong> Engage in immersive activities
+                                    to fuel your
+                                    passion for research.
+                                </li>
+                            </ol>
+                            </p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-up" data-aos-delay="200">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                            data-bs-target="#faq-list-3" class="collapsed">What are its expected outcomes?
+                            <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                            <ol>
+
+
+                                <li class="py-0">
+
+                                    <strong>Enhanced Research Skills:</strong>
+                                    Develop advanced skills in experimental design, data analysis, and interpretation.
+                                </li>
+                                <li class="py-0">
+
+                                    <strong>Interdisciplinary Collaboration:</strong>
+                                    Engage with experts from diverse fields, fostering innovative collaborations.
+
+                                </li>
+
+                                <li class="py-0">
+                                    <strong>Creating Thinking:</strong>
+                                    Cultivate a culture of innovation and explore novel research ideas.
+                                </li>
+
+                                <li class="py-0">
+                                    <strong>Effective Project Management:</strong>
+                                    Acquire project management skills for effiecient research execution.
+                                </li>
+
+                                <li class="py-0">
+                                    <strong>Strong Communication:</strong>
+                                    Improve presentation and dissemination skills for impactful research communication.
+                                </li>
+                                <li class="py-0">
+                                    <strong>Professional Networking:</strong>
+                                    Expand your network and connect with researchers and industry professionals.
+                                </li>
+                                <li class="py-0">
+                                    <strong>Research Ethics and Integrity:</strong>
+                                    Gain a solid understanding of ethical research practices
+                                </li>
+                            </ol>
+                            </p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-up" data-aos-delay="300">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                            data-bs-target="#faq-list-4" class="collapsed">When are the important deadlines? <i
+                                class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                June 05, 2023: Application Open <br>
+                                July 04, 2023: Application Close <br>
+                                July 06, 2023: Final Announcement <br>
+                                July 08, 2023: Program Start <br>
+                            </p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-up" data-aos-delay="400">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                            data-bs-target="#faq-list-5" class="collapsed">Who can apply?<i
+                                class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                The training program is open to all individuals who have an interest in research and a desire to develop their skills and knowledge in a collaborative and supportive learning environment. Whether you are a student, professional, or researcher from any field, this training is designed to provide valuable insights and tools to enhance your research abilities.
+                            </p>
+                        </div>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="400">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                            data-bs-target="#faq-list-6" class="collapsed">Will I get a certificate upon completion?<i
+                                class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-6" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Yes, all the participants who complete the course will receive a certificate.
+                            </p>
+                        </div>
+                    </li>
+                    
+                    <li data-aos="fade-up" data-aos-delay="400">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                            data-bs-target="#faq-list-7" class="collapsed">Who is NRCC?<i
+                                class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-7" class="collapse" data-bs-parent=".faq-list">
+                            <p style="text-align: justify;">
+                                The Nepal Research and Collaboration Center (NRCC) is an esteemed institution dedicated
+                                to fostering a culture of research-based learning and academic excellence in Nepal.
+                                Since its inception in 2019, NRCC has been at the forefront of educational innovation,
+                                bringing together a vibrant community of educators, researchers, and learners to embark
+                                on a transformative journey of knowledge discovery and intellectual growth.
+
+                                At NRCC, we firmly believe that research-based learning is the key to unlocking
+                                individual potential and driving societal progress. Through our dynamic range of
+                                programs and initiatives, we empower students, educators, and professionals to delve
+                                into the realms of inquiry, critical thinking, and innovation. From our captivating
+                                "Read with NRCC" campaign, which instills a love for reading and lifelong learning, to
+                                our cutting-edge "Python for Research" training, equipping participants with invaluable
+                                data analysis and programming skills, we provide a rich and immersive learning
+                                environment that nurtures intellectual curiosity and ignites a passion for exploration.
+
+                                Join us at NRCC as we embark on a transformative educational journey that transcends
+                                boundaries and empowers individuals to make a meaningful impact in their fields of
+                                study. Together, we will push the boundaries of knowledge, foster collaboration and
+                                interdisciplinary research, and cultivate a new generation of thinkers and problem
+                                solvers who will shape the future of Nepal's scientific, academic, and social landscape.
+                                With NRCC, your educational aspirations will soar to new heights, as we strive to create
+                                a vibrant community of lifelong learners dedicated to making a difference in the world.
+                            </p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Get in Touch</h2>
+                <p>"We're always here to listen and help. Whether you have a question, comment, or concern, our friendly
+                    team is
+                    ready to assist you. Contact us today and experience exceptional customer service that goes above
+                    and beyond."
+                </p>
+            </div>
+
+            <div class="row contact-info">
+
+                <div class="col-md-4">
+                    <div class="contact-address">
+                        <i class="bi bi-geo-alt"></i>
+                        <h3>Address</h3>
+                        <address><a href="https://goo.gl/maps/zxNNXFVsWK8pqPgHA">House No.164, Bhakti Thapa Sadak, New Baneshwor, KTM </a></address>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="contact-phone">
+                        <i class="bi bi-phone"></i>
+                        <h3>Phone Number</h3>
+                        <p><a href="tel:+977 - 9802348778">+977 - 9802348778</a></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="contact-email">
+                        <i class="bi bi-envelope"></i>
+                        <h3>Email</h3>
+                        <p><a href="mailto:nepalresearchcenter@gmail.com">info@nrccnepal.org</a></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Let's Connect</h3>
+                    <div class="form">
+                        <form action="" method="post" role="form" class="php-email-form">
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <input type="text" name="name" class="form-control" id="name"
+                                        placeholder="Your Name" data-rule="minlen:4"
+                                        data-msg="Please enter at least 4 chars">
+                                </div>
+                                <div class="col-md-6 form-group mt-3 mt-md-0">
+                                    <input type="email" class="form-control" name="email" id="email"
+                                        placeholder="Your Email" data-rule="email"
+                                        data-msg="Please enter a valid email">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6 form-group">
+                                    <input type="text" class="form-control" name="address" id="address"
+                                        placeholder="Your Address" required>
+                                </div>
+                                <div class="col-md-6 form-group mt-3 mt-md-0">
+                                    <input type="text" class="form-control" name="phone" id="phone"
+                                        placeholder="Your Phone Number" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group mt-3">
+                                <textarea class="form-control" name="message" rows="5" placeholder="Message"
+                                    required></textarea>
+                            </div>
+                            <div class="my-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                            </div>
+                            <div class="text-center"><button type="submit" disabled>Send Message</button></div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="map-responsive">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d279.69690369709343!2d85.33567994522087!3d27.690151833120645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19860a58dced%3A0x9a2314f109088c48!2sNew%20Baneshwor%20Plaza!5e0!3m2!1sen!2snp!4v1680428877465!5m2!1sen!2snp"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Contact Section -->
+
+</main><!-- End #main -->
+
+
+{% endblock content %}
+
+{% block js %}{% endblock js %}

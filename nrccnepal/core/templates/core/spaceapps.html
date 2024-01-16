@@ -1,0 +1,938 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}NASA SpaceApps Challenge{% endblock title %}
+{% block css %}
+<style>
+    .article {
+        position: relative;
+        /* max-width: 1200px; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 40px;
+        z-index: 1;
+    }
+
+    .article p {
+        font-size: 14pt;
+        line-height: 22pt;
+        color: black;
+        border-left: 3px solid blue;
+        padding: 30px 40px;
+        background: #eee;
+        font-weight: 300;
+        word-spacing: 5px;
+        border-radius: 0 20px 0 0;
+    }
+
+    .article p:first-letter {
+        font-size: 200%;
+        font-weight: 600;
+        margin-right: 1px;
+        color: #004AAD;
+    }
+    /* For itinerary */
+
+    .itinerary-large-text {
+        font-size: 18px;
+    }
+
+    .itinerary-medium-text {
+        font-size: 16px;
+    }
+
+    .itinerary-small-text {
+        font-size: 14px;
+    }
+
+    
+</style>
+
+{% endblock css %}
+
+{% block content %}
+
+<!-- ======= Hero Section ======= -->
+<!-- <section id="hero">
+  <div class="container">
+    <div class="hero-content">
+    </div>
+    <div class="hero-image">
+      <img src="{% static 'core/img/spaceapps/spaceapps_cover.png' %}" alt="Hero Image" class="img-fluid">
+    </div>
+  </div>
+</section> -->
+
+<section id="hero">
+    <div class="hero-container" style="background-size: cover; background-position: center center; height: auto;">
+<!-- 
+        <div class="row">
+            <div class="col-md-6">
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus minus
+                    doloremque id nihil nobis tempora dolore accusantium non consequatur exercitationem dolorem atque
+                    esse velit earum explicabo sed rem error laboriosam, nulla voluptatem quam cupiditate architecto?
+                    Cumque voluptatibus quae voluptas sapiente possimus impedit, inventore sed sit dolore odio ratione
+                    perspiciatis autem nostrum at vitae natus ipsam consequatur? Reiciendis, odio. Sint, accusantium!
+                </p>
+            </div>
+            <div class="col-md-6">
+                <img src="mk" alt="mk">
+            </div>
+        </div>
+    -->
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active" style="background-image: url({% static 'core/img/spaceapps/spaceapps_cover.png' %})">
+
+                    <div class="carousel-container" style="margin-top: 200px;">
+                        <div class="carousel-content">
+                            <div class="badge bg-gradient-primary-to-secondary mb-4">
+                                <div class="text-uppercase">Research &#124; <span style="color:orange"> Collaboration </span> &#124; innovation</div>
+                            </div>
+                            <h5 class="animate__animated animate__fadeInDown text-white">Nepal Research and Collaboration Center
+                            </h5>
+                            <h2 class="display-3 fw-bolder"><span class="text-white d-inline">NASA Space Apps Challenge
+                                <span style="color:orange;">2023</span>
+                                </span>
+                            </h2>
+
+                            <div class="animate__animated animate__fadeInUp mt-0">
+                                <p style="margin-block:0"><i class="bi bi-calendar-check" style="color: orange;"></i>&nbsp;&nbsp; Oct 07 - Oct 08, 2023</p>
+                                <p style="margin-block:0"><i class="bi bi-geo-alt" style="color: orange;"></i>&nbsp;&nbsp;  Library Hall, Pulchowk Campus </p>
+                                <!-- <p style="margin-block:0"><i class="bi bi-clock" style="color: orange;"></i>&nbsp;&nbsp;  7:00 PM - 8:30 PM </p> -->
+                            </div>
+                            <a href="https://forms.gle/Qbr1JEKHEe3w9yf97" class="btn-get-started animate__animated animate__fadeInUp" target="_blank">Register Now</a>
+                            <a href="https://www.spaceappschallenge.org/2023/locations/kathmandu/" class="btn-get-started animate__animated animate__fadeInUp scrollto" target="_blank">Learn More</a>
+
+                        </div>
+                    </div>
+               
+            </div>
+        </div>
+    </div>
+</div>
+</section><!-- End Hero -->
+
+<main id="main">
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+        <div class="container">
+
+
+            <div class="article" style="padding: 10px;">
+                <p style="text-align: justify;">
+                    <strong>NASA Space Apps Challenge:</strong> The NASA International Space Apps Challenge is a global hackathon bringing together coders, scientists, designers, and innovators to address challenges using open data from NASA and its partners. Participants collaborate over two days to create solutions for Earth and space-related issues, employing skills such as software development, art, and storytelling. The event fosters networking opportunities locally and globally, emphasizing this year's theme of promoting knowledge and data sharing for positive outcomes.
+                </p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-4">
+                    <div class="box">
+                        <span style="color:orange;">1</span>
+                        <h4>When & Where?</h4>
+                        <p>
+                            The hackathon will be held at Library Hall, Pulchowk Campus on Oct 7-8.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="box">
+                        <span style="color:orange;">2</span>
+                        <h4>Where can I Apply?</h4>
+                        <p>You can apply by filling the form provided <a href="https://forms.gle/Qbr1JEKHEe3w9yf97">here.</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="box">
+                        <span style="color:orange;">3</span>
+                        <h4> Important Deadlines</h4>
+                        <p>The deadline for application is Oct 2, 2023. Please note that we will be selecting the applications as they come in and will stop accepting applications after we have selected 100 participants.</p>
+                        <!--<p>Oct 02 <strong>Application Deadline</strong></p>-->
+                        <!--<p>July 04 <strong>Application Close</strong></p>-->
+                        <!--<p>July 06 <strong>Final Announcement</strong></p>-->
+                        <!--<p>July 08 <strong>Program Start</strong></p>-->
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- End Why Us Section -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-5 order-1 order-lg-2" data-aos="fade-left">
+            <img src="{%static 'core/img/spaceapps/spaceapps_img1.jpg'%}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-7 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
+            <h2 style="color: #004AAD;text-transform: uppercase;">Why Physical Hackathon?</h2>
+            <p>
+              Experience a unique physical hackathon, where face-to-face interactions drive enhanced collaboration, unmatched by virtual settings. The vibrant atmosphere ignites excitement and competition, motivating participants like never before. <br><br>
+            </p>
+            <ul style="list-style: none;">
+              <li><i class="bi bi-check-circle"></i>&nbsp; 36-hour timeframe, with continuous brainstorming and innovation, complemented by on-site refreshments that maintain focus and energy</li><br>
+              <li><i class="bi bi-check-circle"></i>&nbsp; Balanced breaks encourage socializing, preventing burnout and boosting energy levels</li><br>
+              <li><i class="bi bi-check-circle"></i>&nbsp; In-person mentors provide real-time guidance, enhancing the learning journey</li><br>
+            </ul>
+            <p>
+              The competition gains purpose by addressing real-world challenges, infusing depth into projects. Participate in this intellectually thrilling adventure, crafting unforgettable memories in a focused environment.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+<!-- Section: Timeline -->
+<section>
+    <div class="container">
+        <div class="col-12 text-center mb-5">
+            <div class="row justify-content-center section-title">
+                <h2 >Event Timeline</h2>
+                <!--<p >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>-->
+            </div>
+        </div>
+        <!--first section-->
+        <div class="row align-items-center how-it-works d-flex">
+            <div class="col-2 text-center bottom d-inline-flex justify-content-center align-items-center">
+                <div class="circle font-weight-bold">1</div>
+            </div>
+            <div class="col-6">
+                <h5 class="itinerary-large-text">Pre-Events</h5>
+                <p>Promoting the event to potential participants, Recruiting and training mentors, Preparing the event space, Gathering and organizing challenge data, Creating a schedule and logistics plan</p>
+            </div>
+        </div>
+        <!--path between 1-2-->
+        <div class="row timeline">
+            <div class="col-2">
+                <div class="corner top-right"></div>
+            </div>
+            <div class="col-8">
+                <hr/>
+            </div>
+            <div class="col-2">
+                <div class="corner left-bottom"></div>
+            </div>
+        </div>
+        <!--second section-->
+        <div class="row align-items-center justify-content-end how-it-works d-flex">
+            <div class="col-6 text-right">
+                <h5 class="itinerary-large-text">Hackathon Annoucement</h5>
+                <p>Announcing hackathon on online platforms and website orientation</p>
+            </div>
+            <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center">
+                <div class="circle font-weight-bold">2</div>
+            </div>
+        </div>
+        <!--path between 2-3-->
+        <div class="row timeline">
+            <div class="col-2">
+                <div class="corner right-bottom"></div>
+            </div>
+            <div class="col-8">
+                <hr/>
+            </div>
+            <div class="col-2">
+                <div class="corner top-left"></div>
+            </div>
+        </div>
+        <!--third section-->
+        <div class="row align-items-center how-it-works d-flex">
+            <div class="col-2 text-center top d-inline-flex justify-content-center align-items-center">
+                <div class="circle font-weight-bold">3</div>
+            </div>
+            <div class="col-6">
+                <h5 class="itinerary-large-text">Registration Opens</h5>
+                <p>Opening registration along with announcement</p>
+            </div>
+        </div>
+
+        <!--path between 1-2-->
+        <div class="row timeline">
+            <div class="col-2">
+                <div class="corner top-right"></div>
+            </div>
+            <div class="col-8">
+                <hr/>
+            </div>
+            <div class="col-2">
+                <div class="corner left-bottom"></div>
+            </div>
+        </div>
+        <!--second section-->
+        <div class="row align-items-center justify-content-end how-it-works d-flex">
+            <div class="col-6 text-right">
+                <h5 class="itinerary-large-text">Registration Closes</h5>
+                <p>The registration phase comes to an end</p>
+            </div>
+            <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center">
+                <div class="circle font-weight-bold">4</div>
+            </div>
+        </div>
+        <!--path between 2-3-->
+        <div class="row timeline">
+            <div class="col-2">
+                <div class="corner right-bottom"></div>
+            </div>
+            <div class="col-8">
+                <hr/>
+            </div>
+            <div class="col-2">
+                <div class="corner top-left"></div>
+            </div>
+        </div>
+        <!--third section-->
+        <div class="row align-items-center how-it-works d-flex">
+            <div class="col-2 text-center top d-inline-flex justify-content-center align-items-center">
+                <div class="circle font-weight-bold">5</div>
+            </div>
+            <div class="col-6">
+                <h5 class="itinerary-large-text">Team Selection</h5>
+                <p>Projects are carefully reviewed, and selected teams are announced. We will choose 25 teams for the physical hackathon, while others will have the chance to engage virtually.</p>
+            </div>
+        </div>
+        
+        <!--path between 1-2-->
+        <div class="row timeline">
+            <div class="col-2">
+                <div class="corner top-right"></div>
+            </div>
+            <div class="col-8">
+                <hr/>
+            </div>
+            <div class="col-2">
+                <div class="corner left-bottom"></div>
+            </div>
+        </div>
+        <!--second section-->
+        <div class="row align-items-center justify-content-end how-it-works d-flex">
+            <div class="col-6 text-right">
+                <h5 class="itinerary-large-text">Main Event</h5>
+                <p>The highly anticipated Hackathon takes place on October 7th and 8th</p>
+            </div>
+            <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center">
+                <div class="circle font-weight-bold">6</div>
+            </div>
+        </div>
+        <!--path between 2-3-->
+        <div class="row timeline">
+            <div class="col-2">
+                <div class="corner right-bottom"></div>
+            </div>
+            <div class="col-8">
+                <hr/>
+            </div>
+            <div class="col-2">
+                <div class="corner top-left"></div>
+            </div>
+        </div>
+        <!--third section-->
+        <div class="row align-items-center how-it-works d-flex">
+            <div class="col-2 text-center top d-inline-flex justify-content-center align-items-center">
+                <div class="circle font-weight-bold">7</div>
+            </div>
+            <div class="col-6">
+                <h5 class="itinerary-large-text">Certificates and Prizes by NRCC</h5>
+                <p>Announcement of winners and distribution of certificates and prizes</p>
+            </div>
+        </div>
+        <!--path between 1-2-->
+        <div class="row timeline">
+            <div class="col-2">
+                <div class="corner top-right"></div>
+            </div>
+            <div class="col-8">
+                <hr/>
+            </div>
+            <div class="col-2">
+                <div class="corner left-bottom"></div>
+            </div>
+        </div>
+        <!--second section-->
+        <div class="row align-items-center justify-content-end how-it-works d-flex">
+            <div class="col-6 text-right">
+                <h5 class="itinerary-large-text">Local Judging</h5>
+                <p>Submissions from participants undergo local judging, where experts evaluate the projects based on creativity, feasibility, and impact.</p>
+            </div>
+            <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center">
+                <div class="circle font-weight-bold">8</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Itinerary Section -->
+<section>    
+    <div class="container py-9 py-lg-11 position-relative z-index-1">
+        <div class="row">
+            <div class="row justify-content-center section-title">
+                <h2 >Itinerary</h2>
+                <!--<p >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod-->
+                <!--    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,-->
+                <!--    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo-->
+                <!--    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse-->
+                <!--cillum dolore eu fugiat nulla pariatur.</p>-->
+            </div>
+            <div class="col-lg-3 mb-3 mb-lg-0"> 
+                <!--  style="max-width: 300px;" -->
+                <h5 class="mb-4 text-info aos-init aos-animate" data-aos="fade-up"></h5><br>
+                <div class="nav nav-pills flex-column aos-init aos-animate" id="myTab" role="tablist" data-aos="fade-up">
+                    <button class="nav-link px-4 text-start mb-3 active" id="d1-tab" data-bs-toggle="tab" data-bs-target="#day1" type="button" role="tab" aria-controls="day1" aria-selected="true">
+                        <span class="d-block fs-5 fw-bold">Day 1</span>
+                        <span class="small">Sat, Oct 7, 2023</span>
+                    </button>
+                    
+                    <button class="nav-link px-4 text-start" id="d2-tab" data-bs-toggle="tab" data-bs-target="#day2" type="button" role="tab" aria-controls="day2" aria-selected="false" tabindex="-1">
+                        <span class="d-block fs-5 fw-bold">Day 2</span>
+                        <span class="small">Sun, Oct 8, 2023</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="col-lg-10 col-xl-9">
+                <div data-aos="fade-up" class="tab-content aos-init aos-animate" id="myTabContent">
+                    <div class="tab-pane fade active show" id="day1" role="tabpanel" aria-labelledby="d1-tab">
+                        <ul class="pt-4 list-unstyled mb-0 text-start pl-3">
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">8:00 AM&nbsp; - 9:00 AM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4 class="itinerary-large-text">Registration and Set-Up</h4>
+                                    <p class="mb-0 itinerary-medium-text">
+                                        Participants arrive and complete the registration process, ensuring their devices are set up for the event
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">9:15 AM &nbsp;&nbsp;- &nbsp;9:30 AM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4 class="itinerary-large-text">Inauguration</h4>
+                                    <p class="mb-0 itinerary-medium-text">
+                                        The event kicks off with an inaugural session, setting the tone for the hackathon
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">9:30 AM - 10:00 AM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4 class="itinerary-large-text">Intro to NASA Space Apps</h4>
+                                    <p class="mb-0 itinerary-medium-text">
+                                        An overview is provided about NASA Space Apps, explaining its purpose and the challenges participants will be addressing
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">10:15 AM - 12:00 PM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4 class="itinerary-large-text">Hackathon Begins</h4>
+                                    <p class="mb-0 itinerary-medium-text">
+                                        The hackathon officially begins, and participants start working on their innovative solutions
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">12:15 PM&nbsp;&nbsp; -&nbsp;&nbsp; 1:15 PM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4 class="itinerary-large-text">Lunch</h4>
+                                    <p class="mb-0 itinerary-medium-text">
+                                        Participants break for lunch to recharge before continuing their work
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">1:30 AM&nbsp; -&nbsp;&nbsp; 4:30 PM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4 class="itinerary-large-text">Working on Ideas</h4>
+                                    <p class="mb-0 itinerary-medium-text">
+                                        Participants utilize this time to further brainstorm, refine, and develop their ideas.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">4:45 PM &nbsp;- &nbsp;5:45 PM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4 class="itinerary-large-text">Talk by Guest Speaker</h4>
+                                    <p class="mb-0 itinerary-medium-text">
+                                        Guest speaker shares valuable insights and expertise related to the theme of the hackathon
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">6:00 PM &nbsp;- &nbsp;7:00 PM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4 class="itinerary-large-text">Upload of Project Progress</h4>
+                                    <p class="mb-0 itinerary-medium-text">
+                                        Participants share their progress with mentors for feedback
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">7:15 PM &nbsp;&nbsp;- &nbsp;&nbsp;&nbsp;8:15 PM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4 class="itinerary-large-text">Dinner</h4>
+                                    <p class="mb-0 itinerary-medium-text">
+                                        Another meal break provides participants the chance to relax and network.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">8:30 PM&nbsp; - &nbsp;11:00 PM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4 class="itinerary-large-text">Mentoring and Networking</h4>
+                                    <p class="mb-0 itinerary-medium-text">
+                                        Participants engage with mentors for guidance and network with fellow participants
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">11:15 PM &nbsp;- &nbsp;12:00 AM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4 class="itinerary-large-text">Fun Session</h4>
+                                    <p class="mb-0 itinerary-medium-text">
+                                        A fun activity session provides a relaxing and enjoyable touch to the day
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-pane fade" id="day2" role="tabpanel" aria-labelledby="d2-tab">
+                        <ul class="pt-4 list-unstyled mb-0 text-start pl-3">
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">12:15 AM - &nbsp;6:00 AM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4 class="itinerary-large-text">Hacking Continues (Optional)</h4>
+                                    <p class="mb-0 itinerary-medium-text">
+                                        Participants who prefer to work late into the night may do so, ensuring adequate time for project development
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">6:15 AM &nbsp;- &nbsp;7:00 AM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4 class="itinerary-large-text">Breakfast</h4>
+                                    <p class="mb-0 itinerary-medium-text">
+                                        A morning meal provides participants with the energy needed to continue their work
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">7:15 AM &nbsp;- &nbsp;&nbsp;11:30 AM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4 class="itinerary-large-text">Refining Projects</h4>
+                                    <p class="mb-0 itinerary-medium-text">
+                                        Participants focus on adjusting their projects, incorporating feedback and making final improvements
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">11:45 AM - 12:45 PM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4 class="itinerary-large-text">Lunch</h4>
+                                    <p class="mb-0 itinerary-medium-text">
+                                        Another break for lunch allows participants to recharge before the final phase of the event
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">1:00 PM &nbsp;- &nbsp;2:30 PM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4 class="itinerary-large-text">Final Upload of Projects</h4>
+                                    <p class="mb-0 itinerary-medium-text">
+                                        Participants upload their final projects for judging and evaluation
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">2:45 PM &nbsp;- &nbsp;3:45 PM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4 class="itinerary-large-text">Break</h4>
+                                    <p class="mb-0 itinerary-medium-text">
+                                        A brief break for participants to relax before the closing ceremony
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">4:00 PM - &nbsp;5:00 PM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4 class="itinerary-large-text">Closing Ceremony</h4>
+                                    <p class="mb-0 itinerary-medium-text">
+                                        The event concludes with a closing ceremony, during which projects are presented, winners are announced, and participants reflect on their experience
+                                    </p>
+                                </div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End of Itinerary Section -->
+
+<!-- Sponsor Section -->
+<section>
+    <div class="container" data-aos="fade-up">
+        <div class="col-12 text-center mb-0">
+            <div class="row justify-content-center section-title">
+                <h2>Our Collaborators</h2>
+            </div>
+        </div>
+        <div id="sponsor-carousel" class="carousel slide" data-ride="carousel"> 
+            <div class="carousel-inner" role="listbox">
+                <div class="item active d-flex justify-content-center">
+                    <div class="row">
+                        <div class="col-sm-3 col-xs-6 mx-auto">
+                            <div class="sponsor-feature"><img alt="" src="{%static 'core/img/spaceapps/seds.png'%}" style="width: 400px;" /></div>
+                        </div>
+                        <!--<div class="col-sm-3 col-xs-6 mx-auto">-->
+                        <!--    <div class="sponsor-feature"><img alt="" src="https://itagroup.hs.llnwd.net/o40/csg/pse-demo/channel-incentive/logo-mil.png" style="width: 200px;" /></div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- End of Sponsor Section -->
+
+    <!-- Organizers Section  -->
+    <section>
+        <div class="container" data-aos="fade-up">
+            <div class="row">
+              <div class="col-12 text-center mb-5">
+                <div class="row justify-content-center section-title">
+                    <h2 >Organizers</h2>
+                    <!--<p >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>-->
+                </div>
+            </div>
+
+            <div class="col-lg-4 text-center mb-5">
+                <img src="{% static 'core/img/team/organizers_images/swastika_yogi.png' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+                <h4 style="font-weight: 420; font-size:20px;">Swastika Yogi</h4>
+                <span class="d-block text-uppercase" style="font-size:15px; color: #7083d2;">Space Apps Local Lead / Founding Treasurer</span>
+                <span class="d-block mb-3 text-uppercase" style="font-size:15px; color: #7083d2;">BSc Physics, BA Economics, TU</span>
+            </div>
+
+            <div class="col-lg-4 text-center mb-5">
+                <img src="{% static 'core/img/team/organizers_images/bibek_lal_karn.png' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+                <h4 style="font-weight: 420; font-size:20px;">Bibek Lal Karn</h4>
+                <span class="d-block text-uppercase" style="font-size:15px; color: #7083d2;">Space Apps Local Lead / Founding Chairman</span>
+                <span class="d-block mb-3 text-uppercase" style="font-size:15px; color: #7083d2;">BSc Physics, Tribhuvan University</span>
+            </div>
+
+            <div class="col-lg-4 text-center mb-5">
+                <img src="{% static 'core/img/team/organizers_images/agrima_bogati.png' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+                <h4 style="font-weight: 420; font-size:20px;">Agrima Bogati</h4>
+                <span class="d-block text-uppercase" style="font-size:15px; color: #7083d2;">Program Director / Secretary</span>
+                <span class="d-block mb-3 text-uppercase" style="font-size:15px; color: #7083d2;">BSc Biology, Tribhuvan University</span>
+            </div>
+
+            <div class="col-lg-4 text-center mb-5">
+                <img src="{% static 'core/img/team/organizers_images/bijay_adhikari.png' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+                <h4 style="font-weight: 420; font-size:20px;">Bijay Adhikari</h4>
+                <span class="d-block text-uppercase" style="font-size:15px; color: #7083d2;">Program Executive / Member</span>
+                <span class="d-block mb-3 text-uppercase" style="font-size:15px; color: #7083d2;">BSc.CSIT, Tribhuvan University</span>
+            </div>
+
+            <div class="col-lg-4 text-center mb-5">
+                <img src="{% static 'core/img/team/organizers_images/jhanak_shrestha.png' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+                <h4 style="font-weight: 420; font-size:20px;">Jhanak Shreshtha</h4>
+                <span class="d-block text-uppercase" style="font-size:15px; color: #7083d2;">Program Executive / Member</span>
+                <span class="d-block mb-3 text-uppercase" style="font-size:15px; color: #7083d2;">BSc Physics, Tribhuvan University</span>
+            </div>
+
+            <!--<div class="col-lg-4 text-center mb-5">-->
+            <!--    <img src="{% static 'core/img/team/organizers_images/devraj_maidali.png' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">-->
+            <!--    <h4 style="font-weight: 420; font-size:20px;">Devraj Maidali</h4>-->
+            <!--    <span class="d-block text-uppercase" style="font-size:15px; color: #7083d2;">Program Executive / Member</span>-->
+            <!--    <span class="d-block mb-3 text-uppercase" style="font-size:15px; color: #7083d2;">MSc Biotechnology, Tribhuvan University</span>-->
+            <!--</div>-->
+
+            <div class="col-lg-4 text-center mb-5">
+                <img src="{% static 'core/img/team/organizers_images/apekshya_gyawali.png' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+                <h4 style="font-weight: 420; font-size:20px;">Apekshya Gyawali</h4>
+                <span class="d-block text-uppercase" style="font-size:15px; color: #7083d2;">Program Executive / Member</span>
+                <span class="d-block mb-3 text-uppercase" style="font-size:15px; color: #7083d2;">BSc.CSIT, Tribhuvan University</span>
+            </div>
+
+            <div class="col-lg-4 text-center mb-5">
+                <img src="{% static 'core/img/team/organizers_images/prinshu_dahal.png' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+                <h4 style="font-weight: 420; font-size:20px;">Prinshu Dahal</h4>
+                <span class="d-block text-uppercase" style="font-size:15px; color: #7083d2;">Program Executive / Member</span>
+                <span class="d-block mb-3 text-uppercase" style="font-size:15px; color: #7083d2;">Public Health, Purbanchal University</span>
+            </div>
+
+            <!--<div class="col-lg-4 text-center mb-5">-->
+            <!--    <img src="{% static 'core/img/team/organizers_images/kiran_tiwari.png' %}" alt="" class="img-fluid rounded-circle w-50 mb-4">-->
+            <!--    <h4 style="font-weight: 420; font-size:20px;">Kiran Tiwari</h4>-->
+            <!--    <span class="d-block text-uppercase" style="font-size:15px; color: #7083d2;">Program Executive / Member</span>-->
+            <!--    <span class="d-block mb-3 text-uppercase" style="font-size:15px; color: #7083d2;">Public Health, Pokhara University</span>-->
+            <!--</div>-->
+
+        </div>
+    </div>
+</section>
+<!-- End of Organizers Section -->
+
+<!-- ======= Frequently Asked Questions Section ======= -->
+<section id="faq" class="faq section-bg">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Frequently Asked Questions</h2>
+                <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
+                    fugiat sit
+                in iste officiis commodi quidem hic quas.</p> -->
+            </div>
+
+            <div class="faq-list">
+                <ul>
+                    <li data-aos="fade-up">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse"
+                        data-bs-target="#faq-list-1">What is the NASA International Space Apps Challenge? <i
+                        class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                            <p style="text-align: justify;">
+                                Each October, over the course of two days, coders, entrepreneurs, scientists, designers, storytellers, makers, builders, artists, and technologists from around the world come together in a global hackathon. Participants in the NASA International Space Apps Challenge create in-person and virtual teams to solve challenges using open-source data from NASA and its Space Agency Partners.<br><br>
+                                This year's Space Agency Partners include the Australian Space Agency, Brazilian Space Agency, Canadian Space Agency, European Space Agency, Indian Space Research Organization, Italian Space Agency, Japan Aerospace Exploration Agency, Mexican Space Agency, National Space Activities Commission of Argentina, National Space Science Agency of Bahrain, Paraguayan Space Agency, South African National Space Agency, and the Turkish Space Agency.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-up" data-aos-delay="100">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                        data-bs-target="#faq-list-2" class="collapsed">What is the purpose of Space Apps? <i
+                        class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                            <p>The Space Apps Challenge, founded in 2012, has become the largest annual global hackathon in the world. While the top projects are recognized as Global Winners, Space Apps is all about collaboration! Our mission is focused on the following objectives:<br><br>
+                                <ul style="list-style-type: disc; margin-left: 15px;">
+                                    <li class="py-0">
+                                        Inspire collaboration, creativity, and critical thinking
+                                    </li>
+                                    <li class="py-0">
+                                        Foster interest in Earth and space science and exploration
+                                    </li>
+                                    <li class="py-0">
+                                        Raise global awareness of NASA data
+                                    </li>
+                                    <li class="py-0">
+                                        Encourage growth and diversity in the next generation of scientists, engineers, technologists, and designers
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-up" data-aos-delay="200">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                        data-bs-target="#faq-list-3" class="collapsed">What is the theme of the 2023 Space Apps Challenge?
+                        <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                            <p>The theme for the 2023 Space Apps Challenge is "Explore Open Science Together". For more information, please visit <span style="display: inline-block;"><a href="https://www.spaceappschallenge.org">spaceappschallenge.org</a></span>
+                            </p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-up" data-aos-delay="200">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                        data-bs-target="#faq-list-4" class="collapsed">Who should participate in the Space Apps Challenge?
+                        <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                            <p>Space Apps is for everyone, including those who have never “hacked" before! All passionate problem solvers, from students to life-long learners, are encouraged to join. While some of our challenges are technical, others ask you to use artistic skills, business acumen, or your imagination. <br><br>In other words, you do not need to be a coder or data expert to be a part of the Space Apps Challenge. In fact, teams with the most diverse sets of skills are often the most successful!
+
+                            </p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-up" data-aos-delay="200">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                        data-bs-target="#faq-list-5" class="collapsed">Does it cost anything to participate?
+                        <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                            <p>There is no cost to participate in the Space Apps Challenge.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-up" data-aos-delay="200">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                        data-bs-target="#faq-list-6" class="collapsed">What are the important dates?
+                        <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-6" class="collapse" data-bs-parent=".faq-list">
+                            <p>The deadline for application is Oct 2, 2023. We will stop accepting applications after we have selected 100 participants. So, do not wait for the deadline.
+                            </p>
+                        </div>
+                    </li>
+
+
+                    <li data-aos="fade-up" data-aos-delay="300">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                        data-bs-target="#faq-list-7" class="collapsed">What is the minimum age for participants? <i
+                        class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-7" class="collapse" data-bs-parent=".faq-list">
+                            <p>Participants who are under the age of 18 must be registered for the event by a parent or legal guardian and must be accompanied by a parent or legal guardian at all times during the event.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-up" data-aos-delay="400">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                        data-bs-target="#faq-list-8" class="collapsed">Do I register individually or as a team?<i
+                        class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-8" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                               Participants register as individuals, not as teams. Forming your team is a separate process.
+                           </p>
+                       </div>
+                   </li>
+                   <li data-aos="fade-up" data-aos-delay="400">
+                    <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                    data-bs-target="#faq-list-9" class="collapsed">Do the participants have to pay for the food during the hackathon?<i
+                    class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                    <div id="faq-list-9" class="collapse" data-bs-parent=".faq-list">
+                        <!--<p>-->
+                        <!--    Each year NASA SpaceApps provide these detailed guides to help you navigate the hackathon:-->
+                        <!--    <ul style="list-style-type: disc; margin-left: 15px;">-->
+                        <!--        <li class="py-0">-->
+                        <!--            Chat Guide-->
+                        <!--        </li>-->
+                        <!--        <li class="py-0">-->
+                        <!--            Team Formation Guide-->
+                        <!--        </li>-->
+                        <!--        <li class="py-0">-->
+                        <!--            Project Submission Guide-->
+                        <!--        </li>-->
+                        <!--        <li class="py-0">-->
+                        <!--            Judging and Awards Guide-->
+                        <!--        </li>-->
+                        <!--    </ul><br>-->
+                        <!--    You can view most recent guides on <span style="display: inline-block;"><a href="https://www.spaceappschallenge.org/resources/">Resources page</a></span>. They will become available in September.-->
+                        <!--</p>-->
+                        <p>No. The food and refreshments will be provided by the organisers during the hackathon.</p>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+</section><!-- End Frequently Asked Questions Section -->
+
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Get in Touch</h2>
+            <p>"We're always here to listen and help. Whether you have a question, comment, or concern, our friendly
+                team is
+                ready to assist you. Contact us today and experience exceptional customer service that goes above
+                and beyond."
+            </p>
+        </div>
+
+        <div class="row contact-info">
+
+            <div class="col-md-4">
+                <div class="contact-address">
+                    <i class="bi bi-geo-alt"></i>
+                    <h3>Address</h3>
+                    <address><a href="https://goo.gl/maps/zxNNXFVsWK8pqPgHA">House No.164, Bhakti Thapa Sadak, New Baneshwor, KTM </a></address>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="contact-phone">
+                    <i class="bi bi-phone"></i>
+                    <h3>Phone Number</h3>
+                    <p><a href="tel:+977 - 9802348778">+977 - 9802348778</a></p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="contact-email">
+                    <i class="bi bi-envelope"></i>
+                    <h3>Email</h3>
+                    <p><a href="mailto:nepalresearchcenter@gmail.com">info@nrccnepal.org</a></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Let's Connect</h3>
+                <div class="form">
+                    <form action="" method="post" role="form" class="php-email-form">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="name" class="form-control" id="name"
+                                placeholder="Your Name" data-rule="minlen:4"
+                                data-msg="Please enter at least 4 chars">
+                            </div>
+                            <div class="col-md-6 form-group mt-3 mt-md-0">
+                                <input type="email" class="form-control" name="email" id="email"
+                                placeholder="Your Email" data-rule="email"
+                                data-msg="Please enter a valid email">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6 form-group">
+                                <input type="text" class="form-control" name="address" id="address"
+                                placeholder="Your Address" required>
+                            </div>
+                            <div class="col-md-6 form-group mt-3 mt-md-0">
+                                <input type="text" class="form-control" name="phone" id="phone"
+                                placeholder="Your Phone Number" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <textarea class="form-control" name="message" rows="5" placeholder="Message"
+                            required></textarea>
+                        </div>
+                        <div class="my-3">
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                        </div>
+                        <div class="text-center"><button type="submit" disabled>Send Message</button></div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="map-responsive">
+                    <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d279.69690369709343!2d85.33567994522087!3d27.690151833120645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19860a58dced%3A0x9a2314f109088c48!2sNew%20Baneshwor%20Plaza!5e0!3m2!1sen!2snp!4v1680428877465!5m2!1sen!2snp"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section><!-- End Contact Section -->
+
+</main><!-- End #main -->
+
+
+{% endblock content %}
+
+{% block js %}{% endblock js %}
