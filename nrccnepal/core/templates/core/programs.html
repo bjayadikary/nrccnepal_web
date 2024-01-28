@@ -1,0 +1,122 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Programs{% endblock title %}
+{% block css %}{% endblock css %}
+{% block content %}
+
+
+<main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+            
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Programs</h2>
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li>Programs</li>
+                </ol>
+            </div>
+            
+        </div>
+    </section><!-- End Breadcrumbs -->
+    
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            
+            <div class="row gy-4 posts-list">
+                {% for program in all_programs %}
+                <div class="col-xl-4 col-md-6">
+                    <div class="post-item position-relative h-100">
+                        
+                        <div class="post-img position-relative overflow-hidden">
+                            <img src="assets/img/blog/blog-1.jpg" class="img-fluid" alt="">
+                            <span class="post-date">December 12</span>
+                        </div>
+                        
+                        <div class="post-content d-flex flex-column">
+                            
+                            <h3 class="post-title">{{ program.title }}</h3>
+                            
+                            <div class="meta d-flex align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-person"></i> <span class="ps-2">John Doe</span>
+                                </div>
+                                <span class="px-3 text-black-50">/</span>
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-folder2"></i> <span class="ps-2">Politics</span>
+                                </div>
+                            </div>
+                            
+                            <p>
+                                {{ program.body_intro|truncatewords:50 }}
+                            </p>
+                            
+                            <hr>
+                            
+                            <a href="{% url 'program_details' program.title|slugify %}" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                            
+                        </div>
+                        
+                    </div>
+                </div><!-- End post list item -->
+                {% endfor %}
+<!--                 
+                <div class="col-xl-4 col-md-6">
+                    <div class="post-item position-relative h-100">
+                        
+                        <div class="post-img position-relative overflow-hidden">
+                            <img src="assets/img/blog/blog-2.jpg" class="img-fluid" alt="">
+                            <span class="post-date">March 19</span>
+                        </div>
+                        
+                        <div class="post-content d-flex flex-column">
+                            
+                            <h3 class="post-title">Nisi magni odit consequatur autem nulla dolorem</h3>
+                            
+                            <div class="meta d-flex align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-person"></i> <span class="ps-2">Julia Parker</span>
+                                </div>
+                                <span class="px-3 text-black-50">/</span>
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-folder2"></i> <span class="ps-2">Economics</span>
+                                </div>
+                            </div>
+                            
+                            <p>
+                                Incidunt voluptate sit temporibus aperiam. Quia vitae aut sint ullam quis illum voluptatum et. Quo libero rerum voluptatem pariatur nam.
+                            </p>
+                            
+                            <hr>
+                            
+                            <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                            
+                        </div>
+                        
+                    </div>
+                </div> -->
+                <!-- End post list item -->
+                
+            </div><!-- End blog posts list -->
+            
+            <div class="blog-pagination">
+                <ul class="justify-content-center">
+                    <li><a href="#">1</a></li>
+                    <li class="active"><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                </ul>
+            </div><!-- End blog pagination -->
+            
+        </div>
+    </section><!-- End Blog Section -->
+    
+    
+    
+</main><!-- End #main -->
+
+
+{% endblock content %}
+
+{% block js %}{% endblock js %}

@@ -1,18 +1,48 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib import messages
-from .models import Contact
+from .models import Contact, Programs
 from .forms import ContactForm
 # Create your views here.
 
-def testhome(request):
-    return render(request, 'core/index.html')
-
 def home(request):
-    return render(request, 'core/research.html')
+    # Retrieving the top programs, ordered by priority_in_home in descending order
+    major_programs = Programs.objects.all().order_by('-priority_in_home')
+
+    return render(request, 'core/index.html',{
+        "major_programs": major_programs,
+    })
+
 
 def about(request):
     return render(request, 'core/about.html')
+
+
+def research(request):
+    return render(request, 'core/research.html')
+
+
+def programs(request):
+    # Retrieving all the programsm, ordered by priority_in_programs_list in descending order
+    all_programs = Programs.objects.all().order_by('-priority_in_programs')
+
+    return render(request, 'core/programs.html', {
+        "all_programs": all_programs,
+    })
+
+
+def program_details(request, slug):
+    recent_programs = Programs.objects.all().order_by('-priority_in_programs')[:5]
+    program = Programs.objects.filter(slug=slug).first()
+    return render(request, 'core/program-details.html',{
+        "recent_programs": recent_programs,
+        "program": program,
+    })
+
+
+def spaceapps(request):
+    return render(request, 'core/spaceapps.html')
+
 
 # def contact(request):
 #     if request.method == "POST":
@@ -48,12 +78,3 @@ def contact(request):
 
     context = {'contact_form': contact_form}
     return render(request, 'core/contact.html', context)
-
-
-
-def research(request):
-    return render(request, 'core/research.html')
-
-
-def spaceapps(request):
-    return render(request, 'core/spaceapps.html')
