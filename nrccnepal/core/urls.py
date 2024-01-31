@@ -11,7 +11,8 @@ urlpatterns = [
     path('spaceapps23', views.spaceapps, name="spaceapps"),
     path('contact', views.contact, name="contact"),
     # 'Program details' is just for testing purpose
-    path('program-details', views.program_details, name='program-details')
+    path('program-details', views.program_details, name='program-details'),
+    path('program-details-research-training', views.program_details_rt, name='program-details-rt') # just for testing
 ]
 
 # Work on slugify

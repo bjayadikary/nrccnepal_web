@@ -39,6 +39,14 @@ def program_details(request, slug):
         "program": program,
     })
 
+# Just for testing 
+def program_details_rt(request):
+    recent_programs = Programs.objects.all().order_by('-priority_in_programs')[:5]
+    program = Programs.objects.filter(slug=slug).first()
+    return render(request, 'core/program-details.html',{
+        "recent_programs": recent_programs,
+        "program": program,
+    })
 
 def spaceapps(request):
     return render(request, 'core/spaceapps.html')
