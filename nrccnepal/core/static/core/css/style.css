@@ -2486,13 +2486,17 @@ section {
   font-size: 20px;
   left: 0;
   top: -3px;
-  color: #ffc451;
+  color: hwb(40 32% 0%);
 }
 
 .aboutx .content p:last-child {
   margin-bottom: 0;
 }
 
+.bi-check-double-line::before
+{
+  content: "\f26b";
+}
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
@@ -2834,7 +2838,8 @@ section {
 .blog .blog-details .content blockquote {
   overflow: hidden;
   background-color: rgba(82, 86, 94, 0.06);
-  padding: 60px;
+  /* padding: 60px; */
+  padding: 40px 20px 10px 30px;
   position: relative;
   text-align: center;
   margin: 20px 0;
@@ -2848,6 +2853,34 @@ section {
   font-weight: 500;
   font-size: 22px;
 }
+
+/* manually added later, from */
+.blog .blog-details .content blockquote ul{
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.blog .blog-details .content ul li {
+  padding: 0 0 10px 35px;
+  position: relative;
+}
+
+.blog .blog-details .content ul i {
+  
+  position: absolute;
+  font-size: 20px;
+  left: 0;
+  top: -3px;
+  color: hwb(40 32% 0%);
+}
+
+/* .bi-check2-circle::before
+{
+  content: "\f26b";
+} */
+
+/* Upto */
 
 .blog .blog-details .content blockquote:after {
   content: "";
@@ -3004,6 +3037,57 @@ section {
   color: rgba(108, 117, 125, 0.8);
   margin-bottom: 0;
 }
+
+/* Pagination */
+.custom-pagination a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  /* font-family: var(--font-secondary); */
+  margin: 5px;
+  transition: 0.3s all ease;
+}
+
+.custom-pagination a.active {
+  /* background: var(--color-black); */
+  /* color: var(--color-white); */
+  background: orange;
+  color: white;
+
+}
+
+.custom-pagination a.active:hover {
+  /* background: rgba(var(--color-black-rgb), 0.9); */
+  background: orange;
+  color: white;
+  
+}
+
+.custom-pagination a:hover {
+  /* background: rgba(var(--color-black-rgb), 0.1); */
+  background: orange;
+  color: white;
+
+}
+
+.custom-pagination a.prev,
+.custom-pagination a.next {
+  width: auto !important;
+  border-radius: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.custom-pagination a.prev:hover,
+.custom-pagination a.next:hover {
+  /* background: rgba(var(--color-black-rgb), 0.1); */
+  background: orange;
+  color: white;
+}
+
 
 /*------/ Program Title Single (Program Title Section for single page details)/------*/
 .program-title-single {

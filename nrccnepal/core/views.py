@@ -1,13 +1,14 @@
 from django.shortcuts import render
+from django.core.paginator import Paginator, PageNotAnInteger
 from django.http import HttpResponse
 from django.contrib import messages
-from .models import Contact, Programs
+from .models import Contact, Programs, TestProgram, TestProgramTopic
 from .forms import ContactForm
 # Create your views here.
 
 def home(request):
-    # Retrieving the top programs, ordered by priority_in_home in descending order
-    major_programs = Programs.objects.all().order_by('-priority_in_home')
+    # Retrieving the major programs, ordered by priority_in_major_programs_list in descending order
+    major_programs = TestProgram.objects.all().order_by('-priority_in_major_programs_list')[:3]
 
     return render(request, 'core/index.html',{
         "major_programs": major_programs,
@@ -23,30 +24,43 @@ def research(request):
 
 
 def programs(request):
-    # Retrieving all the programsm, ordered by priority_in_programs_list in descending order
-    all_programs = Programs.objects.all().order_by('-priority_in_programs')
+    # Retrieving all the programsm, ordered by priority_in_programs_list in descending order, if conflict occurs, then order by datetime
+    all_programs = TestProgram.objects.all().order_by('-priority_in_programs_list', '-updated_datetime', '-published_date')
+    paginator = Paginator(all_programs, 6) # number of objects to display per page
+    current_page = request.GET.get('page') # retrieves current page number
+    
+    try:
+        paginator_objects = paginator.page(current_page)
+    except PageNotAnInteger:
+        paginator_objects = paginator.page(1)
 
     return render(request, 'core/programs.html', {
-        "all_programs": all_programs,
+        "all_programs": paginator_objects,
+
     })
 
 
 def program_details(request, slug):
-    recent_programs = Programs.objects.all().order_by('-priority_in_programs')[:5]
-    program = Programs.objects.filter(slug=slug).first()
+    # recent_programs = Programs.objects.all().order_by('-priority_in_programs')
+
+    program = TestProgram.objects.filter(slug=slug).first()
+    
+    if program:
+        program_topics = TestProgramTopic.objects.filter(program_title=program.id).order_by('topic_order') # or, program_title__title=program_title
+
+    else:
+        # Handle the case where the program is not found
+        program_topics = None
+
     return render(request, 'core/program-details.html',{
-        "recent_programs": recent_programs,
+        # "recent_programs": recent_programs,
         "program": program,
+        "program_topics": program_topics,
     })
 
 # Just for testing 
 def program_details_rt(request):
-    recent_programs = Programs.objects.all().order_by('-priority_in_programs')[:5]
-    program = Programs.objects.filter(slug=slug).first()
-    return render(request, 'core/program-details.html',{
-        "recent_programs": recent_programs,
-        "program": program,
-    })
+    return render(request, 'core/program-details-research-training.html',{})
 
 def spaceapps(request):
     return render(request, 'core/spaceapps.html')

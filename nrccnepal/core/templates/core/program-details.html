@@ -1,5 +1,6 @@
 {% extends 'core/base.html' %}
 {% load static %}
+{% load custom_filters %}
 {% block title %}Programs{% endblock title %}
 {% block css %}{% endblock css %}
 {% block content %}
@@ -31,18 +32,18 @@
             <div class="row">
               <div class="col-md-12 col-lg-12">
                 <div class="title-single-box">
-                  <h1 class="title-single">3-Months-Long Research Training</h1>
+                  <h1 class="title-single">{{ program.title}}</h1>
                   <!-- Meta top -->
                   <div class="meta-top">
                     <ul>
                       <!-- <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li> -->
-                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <time datetime="2020-01-01">Jan 1, 2022</time></a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-book"></i> 5 min read</li>
+                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <time datetime="2020-01-01">{{ program.time_duration }}</time></a></li>
+                      <li class="d-flex align-items-center"><i class="bi bi-book"></i>{{ program.readtime }}</li>
                     </ul>
                   </div>
                   <!-- End meta top -->
                   
-                  <span class="color-text-a">Enhance your research skills nationwide with our online program led by diverse experts, cultivating an environment for intellectual growth.</span>
+                  <span class="color-text-a">{{ program.short_description }}</span>
                 </div>
               </div>
               <!-- <div class="col-md-12 col-lg-4">
@@ -81,47 +82,107 @@
             </div>
             
             <!-- <h2 class="title">{{ program.title }}</h2> -->
-            
             <div class="content">
-              <h3>Program Overview</h3>
+              {% for topic in program_topics %}
+              <h3>{{ topic.topic }}</h3>
+
+              <!-- First paragraph -->
+              {% if topic.topic_detail_first_paragraph %}
               <p>
-                Our three-month-long Research Training Program is a one-of-a-kind initiative in Nepal, conducted entirely online for accessibility across the nation. This exceptional program empowers participants to elevate their research skills through a comprehensive syllabus, with the guidance of experts in the field. The collaborative environment encourages active engagement among participants, allowing the exchange of ideas and the establishment of meaningful connections. The program occurs annually, bringing together a diverse group of participants to facilitate collaborative research opportunities.
+                {{ topic.topic_detail_first_paragraph }}
               </p>
+              {% endif %}
+              {% if topic.topic_detail_first_bullet_points %}
+              <blockquote>
+                <!-- <p> -->
+                  <ul>
+                    {% for bullet_point in topic.topic_detail_first_bullet_points|split_by_hash %}
+                    {% if bullet_point %}
+                    <li><i class="bi bi-check2-circle"></i> {{ bullet_point }}</li>
+                    {% endif %}
+                    {% endfor %}
+                  </ul>
+                <!-- </p> -->
+              </blockquote>
+              {% endif %}
+              {% if topic.topic_detail_first_bullet_points %}
+
+              {% endif %}
+
+              {% if topic.topic_detail_first_highlighting_text %}
+              {% endif %}
+
+              {% if topic.topic_detail_first_img %}
+              {% endif %}
+
+              {% if topic.topic_detail_first_img_caption %}
+              {% endif %}
+
+              {% if topic.topic_detail_first_video_embed_source %}
               <div class="watch-video d-flex align-items-center position-relative">
                 <i class="bi bi-play-circle"></i>
-                <a href="https://www.youtube.com/embed/sl18__huoXI?si=k0ZoEVYVihc-E9Pn" class="glightbox stretched-link">Watch Overview Video</a>
+                <a href="{{ topic.topic_detail_first_video_embed_source }}" class="glightbox stretched-link" target="_blank">Watch Here</a>
               </div>
               <div style="position: relative; overflow: hidden; padding-bottom: 56.25%; height: 0;">
-                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/sl18__huoXI?si=k0ZoEVYVihc-E9Pn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>             
+                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="{{ topic.topic_detail_first_video_embed_source }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>             
               </div>
+              {% endif %}
+
+              <!-- Second Paragraph -->
+              {% if topic.topic_detail_second_paragraph %}
+              <p>
+                {{ topic.topic_detail_second_paragraph }}
+              </p>
+              {% endif %}
+              
+              {% if topic.topic_detail_second_bullet_points %}
+              
+              {% endif %}
+
+              {% if topic.topic_detail_second_highlighting_text %}
+              {% endif %}
+
+              {% if topic.topic_detail_second_img %}
+              {% endif %}
+
+              {% if topic.topic_detail_second_img_caption %}
+              {% endif %}
+
+              {% if topic.topic_detail_second_video_embed_source %}
+              {% endif %}
+
+              <!-- Third Paragraph -->
+              {% if topic.topic_detail_third_paragraph %}
+              <p>
+                {{ topic.topic_detail_third_paragraph }}
+              </p>
+              {% endif %}
+              
+              {% if topic.topic_detail_third_bullet_points %}
+              {% endif %}
+
+              {% if topic.topic_detail_third_highlighting_text %}
+              {% endif %}
+
+              {% if topic.topic_detail_third_img %}
+              {% endif %}
+
+              {% if topic.topic_detail_third_img_caption %}
+              {% endif %}
+
+              {% if topic.topic_detail_third_video_embed_source %}
+              {% endif %}
+
               <!-- <p>
                 {{ program.body_intro }}
               </p> -->
-              <h3>Syllabus Highlights</h3>
-              <p>
-                The comprehensive research training course covers essential topics such as research proposal writing, grant proposal writing, programming languages like Python, and tools like LaTeX. Additionally, participants will benefit from networking sessions with experts in the field, providing valuable insights and opportunities for collaboration. 
-              </p>
-              <h3>Expert Trainers</h3>
-              <p>
-                Our program connects participants with over 20 expert trainers from various fields globally. These trainers are not only proficient educators but also accomplished researchers in their respective domains. The lectures, while generally covering a broad spectrum of domains, will be tailored for specific topics, ensuring participants receive specialized guidance from skilled professionals.
-              </p>
-              
-              <blockquote>
+              <!-- <blockquote>
                 <p>
                   Et vero doloremque tempore voluptatem ratione vel aut. Deleniti sunt animi aut. Aut eos aliquam doloribus minus autem quos.
                 </p>
-              </blockquote>
-              <h3>Dedicated Mentors</h3>
-              <p>Complementing the training program, mentors from diverse domains are available to provide additional support. These mentors play a crucial role in enhancing participants' understanding of subject matters and catalyzing the development of their skills.
-              </p>
-              <h3>Empowering Nepalese Students</h3>
-              <p>More than just a program, Research Training is a dream of empowering Nepalese students with unparalleled research opportunities. Together, we aim to unlock the potential within each participant, drive innovation, and make a lasting impact on society.
-              </p>
-              <img src="{%static 'core/img/spaceapps/spaceapps_img1.jpg'%}" class="img-fluid" alt="">
-              <p>
-                Join us in this transformative journey and be a part of shaping the future of research in Nepal. Together, we will unlock the limitless possibilities and foster a culture of excellence in research.
-              </p>
-              
+              </blockquote> -->
+              <!-- <img src="{%static 'core/img/spaceapps/spaceapps_img1.jpg'%}" class="img-fluid" alt=""> -->
+              {% endfor %}
             </div><!-- End post content -->
             
             <div class="meta-bottom">
@@ -166,7 +227,7 @@
               <!-- End sidebar recent posts-->
             </div>
           </div>
-
+          
           <div class="sidebar">
             <div class="sidebar-item recent-posts">
               <div class="row">
@@ -176,24 +237,24 @@
                   <div class="info-item d-flex flex-column justify-content-center align-items-center">
                     <i class="bi bi-command"></i>
                     <p>Want to become a part of this Program?<p>
-                    <a data-aos="fade-up" data-aos-delay="200" href="#register_here" class="btn-get-started aos-init aos-animate">Register Here</a> 
+                      <a data-aos="fade-up" data-aos-delay="200" href="#register_here" class="btn-get-started aos-init aos-animate">Register Here</a> 
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            
           </div>
-
         </div>
+        
       </div>
-      
-    </div>
-  </section><!-- End Blog Details Section -->
+    </section><!-- End Blog Details Section -->
+    
+    
+    
+  </main><!-- End #main -->
   
   
+  {% endblock content %}
   
-</main><!-- End #main -->
-
-
-{% endblock content %}
-
-{% block js %}{% endblock js %}
+  {% block js %}{% endblock js %}

@@ -44,23 +44,24 @@ class Programs(models.Model):
 # Testing
 class TestProgram(models.Model):
     title = models.CharField(help_text="Program Title in less than 500 characters", max_length=500)
-    time_duration = models.CharField(help_text="Program Duration", max_length=100)
-    readtime = models.CharField(help_text="Expected Read Time of this Blog", max_length=50)
+    time_duration = models.CharField(help_text="Program Duration, For instance, 'Every Saturday, 1 hour, ...", max_length=100)
+    readtime = models.CharField(help_text="Expected Read Time of this Blog, like '5 mins'", max_length=50)
     short_description = models.CharField(help_text="Short Description in about one or two line", max_length=1000)
     program_featured_img = models.ImageField(upload_to="images/test_uploads/", blank=True, null=True)
+    # program_featured_img_caption = models.CharField("Write caption for the image in less than 500 characters", max_length=500)
     program_tags = models.CharField(help_text="Mention some tags separated by comma (,)", max_length=500)
 
     slug = models.SlugField(unique=True, max_length=600)
     published_date = models.DateField(auto_now_add=True, blank=True)
     updated_datetime = models.DateTimeField(auto_now=True, blank=True)
     PRIORITY_CHOICES = [
-        (0, 'Not displayed on homepage'),
-        (1, 'Display in first column'),
+        (0, 'Do not display on homepage'),
+        (1, 'Display in third column'),
         (2, 'Display in second column'),
-        (3, 'Display in third column')
+        (3, 'Display in first column')
     ]
     priority_in_major_programs_list = models.IntegerField(help_text="Choose 0 if you don't want this program to display in homepage, else choose 1, 2, or 3 priority", choices=PRIORITY_CHOICES, default=0)
-    priority_in_programs_list = models.IntegerField(default=0)
+    priority_in_programs_list = models.IntegerField(help_text='0 means lowest priority', default=0)
     
     def save(self):
         if not self.slug:
@@ -74,29 +75,29 @@ class TestProgram(models.Model):
 class TestProgramTopic(models.Model):
     program_title = models.ForeignKey(TestProgram, on_delete=models.CASCADE)
     
-    topic = models.CharField(help_text="Write a topic", max_length=500)
-    topic_order = models.IntegerField(default=0, blank=True)
+    topic = models.CharField(help_text="Write a topic", max_length=500) # change it to topic name
+    topic_order = models.IntegerField(help_text="1 to display this topic content on the first place, and similarly, 2 for second, 3 for third, and soon.", default=0, blank=True)
     
     topic_detail_first_paragraph = models.TextField(help_text="First paragraph", null=True, blank=True)
     topic_detail_first_bullet_points = models.TextField(help_text="Write bullet points in a single line separated by # ", null=True, blank=True)
     topic_detail_first_highlighting_text = models.TextField(null=True, blank=True)
     topic_detail_first_img = models.ImageField(upload_to=f"images/test_uploads/", blank=True, null=True)
-    topic_detail_first_img_caption = models.CharField(help_text="Write caption for the image in less than 500 characters", max_length=500)
-    topic_detail_first_video_embed_source = models.CharField(help_text="Write the source of the video you want to embed. See the 'src' under iframe tag", max_length=200)
+    topic_detail_first_img_caption = models.CharField(help_text="Write caption for the image in less than 500 characters", max_length=500, blank=True, null=True)
+    topic_detail_first_video_embed_source = models.CharField(help_text="Write the source of the video you want to embed. See the 'src' under iframe tag. Looks like: https://www.youtube.com/embed/sl18__huoXI?si=k0ZoEVYVihc-E9Pn ", max_length=200, blank=True, null=True)
 
     topic_detail_second_paragraph = models.TextField(help_text="Second Paragraph if exists", null=True, blank=True)
     topic_detail_second_bullet_points = models.TextField(help_text="Write bullet points in a single line separated by # ", null=True, blank=True)
     topic_detail_second_highlighting_text = models.TextField(null=True, blank=True)
     topic_detail_second_img = models.ImageField(upload_to=f"images/test_uploads", null=True, blank=True)
-    topic_detail_second_img_caption = models.CharField("Write caption for the image in less than 500 characters", max_length=500)
-    topic_detail_second_video_embed_source = models.CharField("Write the source of the video you want to embed. See the 'src' under iframe tag", max_length=200)
+    topic_detail_second_img_caption = models.CharField(help_text="Write caption for the image in less than 500 characters", max_length=500, blank=True, null=True)
+    topic_detail_second_video_embed_source = models.CharField(help_text="Write the source of the video you want to embed. See the 'src' under iframe tag. Looks like: https://www.youtube.com/embed/sl18__huoXI?si=k0ZoEVYVihc-E9Pn ", max_length=200, blank=True, null=True)
 
     topic_detail_third_paragraph = models.TextField(help_text="Third paragraph if exists", null=True, blank=True)
     topic_detail_third_bullet_points = models.TextField(help_text="Write bullet points in a single line separated by # ", null=True, blank=True)
     topic_detail_third_highlighting_text = models.TextField(null=True, blank=True)
     topic_detail_third_img = models.ImageField(upload_to=f"images/test_uploads", null=True, blank=True)
-    topic_detail_third_img_caption = models.CharField("Write caption for the image in less than 500 characters", max_length=500)
-    topic_detail_third_video_embed_source = models.CharField("Write the source of the video you want to embed. See the 'src' under iframe tag", max_length=200)
+    topic_detail_third_img_caption = models.CharField(help_text="Write caption for the image in less than 500 characters", max_length=500, blank=True, null=True)
+    topic_detail_third_video_embed_source = models.CharField(help_text="Write the source of the video you want to embed. See the 'src' under iframe tag. Looks like: https://www.youtube.com/embed/sl18__huoXI?si=k0ZoEVYVihc-E9Pn ", max_length=200, blank=True, null=True)
 
     def __str__(self):
         return f"{self.topic}"

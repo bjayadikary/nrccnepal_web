@@ -32,14 +32,14 @@
                         
                         <div class="post-img position-relative overflow-hidden">
                             <img src="assets/img/blog/blog-1.jpg" class="img-fluid" alt="">
-                            <span class="post-date">December 12</span>
+                            <span class="post-date">NRCC</span>
                         </div>
                         
                         <div class="post-content d-flex flex-column">
                             
                             <h3 class="post-title">{{ program.title }}</h3>
                             
-                            <div class="meta d-flex align-items-center">
+                            <!-- <div class="meta d-flex align-items-center">
                                 <div class="d-flex align-items-center">
                                     <i class="bi bi-person"></i> <span class="ps-2">John Doe</span>
                                 </div>
@@ -47,10 +47,10 @@
                                 <div class="d-flex align-items-center">
                                     <i class="bi bi-folder2"></i> <span class="ps-2">Politics</span>
                                 </div>
-                            </div>
+                            </div> -->
                             
                             <p>
-                                {{ program.body_intro|truncatewords:50 }}
+                                {{ program.short_description|truncatewords:50 }}
                             </p>
                             
                             <hr>
@@ -101,13 +101,35 @@
                 
             </div><!-- End blog posts list -->
             
-            <div class="blog-pagination">
+            <!-- <div class="blog-pagination">
                 <ul class="justify-content-center">
                     <li><a href="#">1</a></li>
                     <li class="active"><a href="#">2</a></li>
                     <li><a href="#">3</a></li>
                 </ul>
-            </div><!-- End blog pagination -->
+            </div> -->
+            <!-- End blog pagination -->
+
+            <div class="text-center pt-5 font-weight-bold">
+                <div class="custom-pagination">
+                  {% if all_programs.has_previous %}
+                  <a href="?page={{ all_programs.previous_page_number }}" class="prev">Previous</a>
+                  {% endif %}
+  
+                  {% for i in all_programs.paginator.page_range %}
+                    {% if i == all_programs.number  %}
+                      <a href="?page={{ i }}" class="active">{{ i }}</a>
+                    {% else %}
+                      <a href="?page={{ i }}">{{ i }}</a>
+                    {% endif %}
+                  {% endfor %}
+  
+                  {% if all_programs.has_next %}
+                  <a href="?page={{ all_programs.next_page_number }}" class="next">Next</a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
             
         </div>
     </section><!-- End Blog Section -->
