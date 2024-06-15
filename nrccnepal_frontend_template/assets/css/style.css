@@ -15,10 +15,10 @@
 }
 
 :root {
-  --color-orange-dark: #D65600;
-  --color-orange-light: #FF9145;
+  --color-orange-dark: #d65600;
+  --color-orange-light: #ff9145;
   --color-brown-dark: #664732;
-  --color-orange-white: #fff5ee
+  --color-orange-white: #fff5ee;
 }
 
 /* Smooth scroll behavior */
@@ -275,7 +275,7 @@ h6 {
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover > a {
   background-color: #f1f1f1;
-  color: var(--color-primary)
+  color: var(--color-primary);
 }
 
 .navbar .dropdown:hover > ul {
@@ -559,6 +559,11 @@ h6 {
   color: #fff;
 }
 
+.top-text {
+  padding: 0;
+  text-align: left;
+}
+
 @media (max-width: 768px) {
   #hero h2 {
     font-size: 28px;
@@ -603,7 +608,7 @@ h6 {
 }
 
 .aboutx img {
-  width: 543px; 
+  width: 543px;
   height: 356px;
   margin-left: 32px;
   margin-top: 40px;
@@ -613,7 +618,7 @@ h6 {
 .aboutx ul li {
   list-style: none;
   line-height: 32px;
-} 
+}
 
 .bi-check-double-line::before {
   content: '\f26b';
@@ -622,19 +627,16 @@ h6 {
 }
 
 .counts {
-  background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.07);
   margin: 32px 124px;
 }
 
 .counts .count-box {
   padding: 10px;
+  padding-top: 40px;
   width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
+  display: block;
+  margin: 0 auto;
 }
 
 .counts .count-box i {
@@ -661,7 +663,6 @@ h6 {
 
 .about {
   margin: 32px 124px;
-
 }
 .about .content {
   padding: 30px 0;
@@ -774,11 +775,9 @@ h6 {
   color: #777777;
 } */
 
-
-.programs {
+/* .programs {
   margin: 32px 124px;
 }
-
 
 .programs .post-item {
   border-radius: 16px;
@@ -811,39 +810,190 @@ h6 {
 
 .programs .post-item a:hover i {
   margin-left: 12px;
+} */
+
+.upcoming {
+  padding: 32px 0;
+  background-color: #586f90;
+  background-size: cover;
+  padding-bottom: 70px;
+}
+
+#upcoming .container {
+  margin: 0 auto;
+  padding: 0 124px; /* This will create the same spacing you initially wanted */
+}
+
+.upcoming .title {
+  color: white;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.upcoming .post-item {
+  position: relative;
+    display: inline-block;
+    justify-content: center;
+}
+
+.upcoming img{
+  display: block;
+}
+
+.upcoming .program-name {
+  position: absolute;
+    bottom: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    border-radius: 8px;
+    width: 158px;
+    height: 79px;
+    top: 85%;
+    margin-left: 8px
+}
+
+.upcoming .post-item h2 {
+  margin-top: 24px;
+  margin-left: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.upcoming .post-item a {
+  padding-top: 4px;
+  margin-left: 8px;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--color-primary);
+  padding-right: 20px;
+}
+
+.upcoming .program-date {
+  background: var(--color-primary);
+    border: 2px solid #ffffff;
+    width: 111px;
+    height: 32px;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 10%;
+    left: 53%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.upcoming .program-date h2{
+font-size: 12px;
+font-weight: 400;
+color: #ffffff;
+margin-top: 10px;
+}
+
+.programs .post-item i {
+  margin-left: 5px;
+}
+
+.programs .post-item a:hover i {
+  margin-left: 12px;
 }
 
 .coreteam {
-  margin: 32px 124px;
+  padding: 32px 0;
 }
 
-.coreteam .picture {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+#coreteam .container {
+  margin: 0 auto;
+  padding: 0 124px; /* This will create the same spacing you initially wanted */
 }
 
-.coreteam .picture .name-img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column; 
-  text-align: center; 
-}
-
-.coreteam .picture img {
-  border-radius: 50%;
-  margin-bottom: 16px;
-  width: 200px;
-  height: 200px;
-}
-
-.coreteam .picture p {
+.coreteam .title {
   text-align: center;
   margin-bottom: 32px;
-  font-size: 20px;
+}
+
+.coreteam .post-item {
+  position: relative;
+    display: inline-block;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.coreteam img{
+  display: block;
+}
+
+.coreteam .team-name {
+  position: absolute;
+    bottom: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    border-radius: 8px;
+    width: 158px;
+    height: 79px;
+    top: 85%;
+    margin-left: 8px
+}
+
+.coreteam .post-item h2 {
+  margin-top: 24px;
+  margin-left: 8px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--color-primary);
+}
+
+.coreteam .post-item p {
+  padding-top: 4px;
+  margin-left: 8px;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--color-primary);
+  padding-right: 20px;
+}
+
+.coreteam .team-link {
+  background: var(--color-primary);
+    border: 2px solid #ffffff;
+    width: 84px;
+    height: 32px;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 10%;
+    left: 53%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.coreteam .team-link span {
+  display: flex;
+  align-items: center;
+}
+
+.coreteam .team-link a{
+  color: #ffffff; 
+    margin: 0 10px; 
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    font-size: 1.1em; 
+}
+
+.programs .post-item i {
+  margin-left: 5px;
+}
+
+.programs .post-item a:hover i {
+  margin-left: 12px;
 }
 
 .faq {
@@ -963,7 +1113,8 @@ h6 {
 .blog .blog-pagination li.active a,
 .blog .blog-pagination li:hover a {
   color: var(--color-white);
-} */
+}
+*/
 
 /*--------------------------------------------------------------
 # Blog Posts List
@@ -2473,16 +2624,15 @@ h6 {
 --------------------------------------------------------------*/
 #footer {
   background: #f0f0f0;
-  padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
   margin-top: 64px;
 }
 
 #footer .footer-top {
-  background: #f0f0f0;
+  background: #002659;
   /* border-bottom: 1px solid #2f2f2f; */
-  padding: 60px 0 30px 0;
+  padding: 60px 0 0 0;
 }
 
 #footer .footer-top .footer-info {
@@ -2509,7 +2659,7 @@ h6 {
   font-size: 18px;
   display: inline-block;
   /* background: #2a2a2a; */
-  color: #374559;
+  color: #ffffff;
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
@@ -2534,10 +2684,6 @@ h6 {
   padding-bottom: 12px;
 }
 
-#footer .footer-top .footer-links {
-  margin-bottom: 30px;
-}
-
 #footer .footer-top .footer-links ul {
   list-style: none;
   padding: 0;
@@ -2555,7 +2701,7 @@ h6 {
 }
 
 #footer .footer-top .footer-links ul a {
-  color: #374559;
+  color: #ffffff;
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
@@ -2777,11 +2923,8 @@ h6 {
   }
 }
 
-
-
 #program-info {
-  background: url("../img/bg-rt.jpg")
-    no-repeat center center;
+  background: url('../img/bg-rt.jpg') no-repeat center center;
   background-size: cover;
   padding: 60px 0;
   position: relative;
@@ -2792,7 +2935,7 @@ h6 {
 }
 
 #program-info::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -2890,7 +3033,6 @@ h6 {
 
 /* Progam.index Page CSS Ends */
 
-
 /* research training */
 .rt-title {
   color: var(--color-orange-dark);
@@ -2926,15 +3068,13 @@ h6 {
 }
 
 #info-video .info-content ul li::before {
-  content: "\f058"; 
+  content: '\f058';
   font-family: 'FontAwesome';
   position: absolute;
   left: 0;
   color: #5cb85c;
   font-size: 14px;
 }
-
-
 
 #info-video .video-container iframe {
   max-width: 100%;
@@ -2979,8 +3119,8 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; 
-  text-align: center; 
+  flex-direction: column;
+  text-align: center;
 }
 
 .team .picture img {
@@ -3000,7 +3140,6 @@ h6 {
 
 .objectives {
   margin: 32px 124px;
-
 }
 .objectives .content {
   padding: 30px 0;
@@ -3089,7 +3228,7 @@ h6 {
 .card-header:first-child {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  margin: 0 -1px
+  margin: 0 -1px;
 }
 
 .list-group-item {
@@ -3100,7 +3239,7 @@ h6 {
 .week {
   font-size: 16px;
   font-weight: 600;
-  color: #8F3A00;
+  color: #8f3a00;
 }
 
 .syllabus-topic {
@@ -3234,8 +3373,12 @@ h6 {
   border-radius: 0 4px 4px 0;
 }
 
-#rt-footer .rt-footer-top .rt-footer-newsletter form input[type='submit']:hover {
-  background: #8F3A00;
+#rt-footer
+  .rt-footer-top
+  .rt-footer-newsletter
+  form
+  input[type='submit']:hover {
+  background: #8f3a00;
 }
 
 #rt-footer .copyright {
@@ -3264,4 +3407,78 @@ h6 {
 
 .testimonial {
   margin: 32px 124px;
+}
+
+.carousel-container {
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  position: relative;
+  width: 100%;
+}
+
+.carousel-inner {
+  /* display: flex; */
+  justify-content: right;
+  align-items: right;
+}
+
+.carousel-item {
+  width: 500px;
+  height: 500px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px; /* Adjust the size of the control buttons if necessary */
+  background-color: blue;
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}
+
+.contain {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  padding: 50px 0;
+  overflow: hidden;
+}
+
+.testimonial .image {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 16px auto; 
+}
+
+.testimonial .slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.slide p {
+  text-align: center;
+  padding: 0 100px;
+  font-size: 14px;
+  font-weight: 400;
 }
