@@ -3207,9 +3207,6 @@ margin-top: 10px;
   margin: 32px 124px 64px 124px;
 }
 
-.team {
-  margin: 32px 124px;
-}
 
 .card {
   border-radius: 0;
@@ -3403,6 +3400,73 @@ margin-top: 10px;
 
 #rt-footer .rt-footer-newsletter input {
   color: var(--color-orange-dark);
+}
+
+.trainers {
+  margin: 32px 124px;
+}
+
+.trainers .picture {
+  border: 1px solid #FF9145;
+  width: 260px;
+  height: 368px;
+  padding: 24px;
+  border-radius: 24px;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 32px;
+
+}
+
+.trainers .picture img {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  align-items: center;
+  margin-left: 5px
+}
+
+.trainers .trainer-name h2{
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-orange-dark);
+  text-align: center;
+  margin-top: 16px;
+}
+
+
+.trainers .trainer-name p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-brown-dark)
+}
+
+.trainers .trainer-link {
+  position: absolute;
+  bottom: 124px; 
+  right: 7px; 
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  background: white;
+  width: 49px;
+  height: 49px;
+  border-radius: 50%;
+}
+
+.trainers .trainer-link a {
+  margin-left: 5px;
+  color: var(--color-orange-dark);
+  font-size: 20px;
+}
+
+.trainers .trainer-link a  i{
+  margin-left: 5px;
+  justify-content: center;
 }
 
 .testimonial {
